@@ -1,0 +1,123 @@
+/* Stressie: inner pages (Manifesto, Contact, Privacy, Terms).
+   Builds on story.css (tokens, nav, buttons, footer). Same calm rules: cream, orange accents, no borders, no shadows. */
+
+.page-main { padding: 12px 0 0; }
+
+/* ---------- Page header: one warm rounded panel ---------- */
+.page-hero { position: relative; isolation: isolate; overflow: hidden; margin: 0 12px; padding: clamp(56px, 8vw, 112px) 0 clamp(44px, 6vw, 80px); border-radius: 32px; background: var(--well); }
+.page-hero::before { content: ""; position: absolute; z-index: -1; right: -12%; top: -55%; width: 62%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(247, 133, 33, .26), rgba(247, 133, 33, .08) 55%, transparent); pointer-events: none; }
+.page-hero .kicker { display: block; margin-bottom: 16px; }
+.page-title { font-size: clamp(42px, 5.6vw, 76px); }
+.page-meta { margin: 18px 0 0; font-size: 15px; font-weight: 500; color: var(--muted); }
+.page-hero .lead { margin-top: 22px; max-width: 640px; }
+
+/* ---------- Legal pages: contents on the left, text on the right ---------- */
+.legal { display: grid; gap: 28px; padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(24px, 4vw, 48px); }
+@media (min-width: 960px) { .legal { grid-template-columns: 230px minmax(0, 1fr); gap: 88px; } }
+.toc { align-self: start; padding: 18px; border-radius: 22px; background: var(--surface); }
+@media (min-width: 960px) { .toc { position: sticky; top: calc(var(--nav) + 28px); padding: 0; background: none; } }
+.toc p { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-ink); }
+.toc ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.toc a { display: flex; gap: 10px; padding: 7px 12px; margin-left: -12px; border-radius: 10px; font-size: 14.5px; line-height: 1.35; color: var(--muted); text-decoration: none; transition: background-color .2s, color .2s; }
+.toc a span { flex: none; min-width: 1.4em; font-variant-numeric: tabular-nums; color: var(--faint); }
+.toc a:hover { color: var(--head); }
+.toc a.is-on { background: var(--well); color: var(--head); font-weight: 600; }
+.toc a.is-on span { color: var(--accent-ink); }
+
+.legal-body { max-width: 700px; }
+.legal-body section { margin-bottom: clamp(40px, 5vw, 56px); scroll-margin-top: calc(var(--nav) + 24px); }
+.legal-body h2 { display: flex; align-items: baseline; gap: 14px; margin: 0 0 16px; font: 500 clamp(24px, 2.3vw, 30px)/1.2 var(--serif); letter-spacing: -.012em; color: var(--head); }
+.legal-body h2 .n { flex: none; font: 600 13px/1 var(--sans); letter-spacing: .06em; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.legal-body h3 { margin: 26px 0 10px; font-size: 16px; font-weight: 600; color: var(--ink); }
+.legal-body p { margin: 0 0 14px; line-height: 1.7; text-wrap: pretty; }
+.legal-body ul { display: grid; gap: 10px; margin: 0 0 18px; padding: 0; list-style: none; }
+.legal-body li { position: relative; padding-left: 22px; line-height: 1.6; }
+.legal-body li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--cta-a); }
+.legal-body b, .legal-body strong { font-weight: 600; color: var(--head); }
+.legal-body a:not(.btn) { color: var(--accent-ink); text-underline-offset: 3px; }
+.note { margin: 18px 0 20px !important; padding: 18px 20px; border-radius: 18px; background: var(--well); color: var(--head); }
+.help { display: grid; gap: 4px; margin: 0 0 20px; padding: 20px 22px; border-radius: 20px; background: var(--night); color: rgba(255, 243, 230, .8); }
+.help b { color: #FFF3E6 !important; font-size: 17px; }
+.help a { color: #FFB679 !important; font-weight: 600; }
+.legal-end { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 26px 28px; border-radius: 24px; background: var(--well); }
+.legal-end p { margin: 0; font: 500 clamp(20px, 2vw, 24px)/1.25 var(--serif); color: var(--head); }
+
+/* ---------- Manifesto: a letter, set in large type ---------- */
+.mani-hero { text-align: center; }
+.mani-hero .wrap { max-width: 980px; }
+.chips-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 26px; }
+.chips-row span { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 999px; background: var(--white); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+.chips-row svg { width: 14px; height: 14px; }
+.mani-hero .page-title { font-size: clamp(44px, 6.6vw, 96px); line-height: .98; }
+.mani { max-width: 700px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) var(--gutter) 24px; }
+.stanza { margin: 0 0 clamp(34px, 4.4vw, 52px); font: 500 clamp(21px, 2.05vw, 27px)/1.42 var(--serif); letter-spacing: -.01em; color: var(--head); text-wrap: pretty; }
+.stanza > span { display: block; }
+.stanza.big { font-size: clamp(32px, 3.9vw, 52px); line-height: 1.08; letter-spacing: -.02em; }
+.stanza.big em, .stanza em { font-style: italic; color: var(--accent-ink); }
+.stanza.moments > span { font-style: italic; color: var(--accent-ink); }
+.stanza.quiet { font-family: var(--sans); font-size: clamp(17px, 1.5vw, 19px); line-height: 1.6; color: var(--muted); letter-spacing: 0; }
+.mani-photo { margin: 0 12px clamp(40px, 6vw, 72px); }
+.mani-photo img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 70% 40%; border-radius: 32px; }
+@media (max-width: 700px) { .mani-photo img { aspect-ratio: 4 / 3; object-position: 78% 40%; } }
+.sign { display: grid; gap: 2px; margin-top: clamp(48px, 6vw, 72px); }
+.sign b { font: italic 500 clamp(30px, 3vw, 40px)/1.1 var(--serif); color: var(--head); }
+.sign span { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Contact: intro on the left, a short form on the right ---------- */
+.contact { display: grid; gap: 40px; padding-top: clamp(48px, 7vw, 96px); }
+@media (min-width: 960px) { .contact { grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; } }
+.contact-intro .kicker { display: block; margin-bottom: 14px; }
+.contact-intro .lead { margin-top: 18px; }
+.contact-intro .chips-row { justify-content: flex-start; margin: 24px 0 0; }
+.contact-intro .chips-row span { background: var(--well); }
+.contact-ways { display: grid; gap: 4px; margin: clamp(32px, 4vw, 48px) 0 0; padding: 0; list-style: none; }
+.contact-ways li { display: grid; grid-template-columns: 96px 1fr; align-items: baseline; gap: 12px; padding: 10px 0; }
+.contact-ways span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+.contact-ways a { width: fit-content; font: 500 clamp(19px, 1.7vw, 22px)/1.3 var(--serif); color: var(--head); text-decoration: none; }
+.contact-ways a:hover { color: var(--accent-ink); }
+@media (min-width: 960px) { .contact-intro { position: sticky; top: calc(var(--nav) + 40px); } }
+
+.contact-form, .contact-done { display: grid; gap: 26px; padding: clamp(22px, 3.4vw, 40px); border-radius: 28px; background: var(--well); }
+.contact-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.contact-form legend, .field > label { display: block; margin: 0 0 12px; padding: 0; font-size: 15px; font-weight: 600; color: var(--ink); }
+.field > label i { font-style: normal; color: var(--accent-ink); }
+.field > label small { margin-left: 6px; font-size: 13px; font-weight: 500; color: var(--faint); }
+.field input, .field textarea { width: 100%; min-height: 52px; padding: 14px 16px; border: 0; border-radius: 14px; background: var(--white); font: 400 16px/1.4 var(--sans); color: var(--ink); appearance: none; }
+.field textarea { min-height: 120px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(116, 96, 63, .55); }
+.field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-radius: 14px; }
+.field input[aria-invalid="true"] { outline: 2px solid #C2410C; }
+.err { margin: 8px 0 0; font-size: 14px; font-weight: 500; color: #B4380B; }
+.group { display: grid; gap: 26px; }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill-row label { position: relative; display: inline-flex; }
+.pill-row input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.pill-row span { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 999px; background: var(--white); font-size: 14.5px; font-weight: 500; color: var(--muted); transition: background-color .2s, color .2s; pointer-events: none; }
+.pill-row label:hover span { color: var(--head); }
+.pill-row input:checked + span { background: #FCD6B0; color: var(--head); font-weight: 600; }
+.pill-row input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.scale .pill-row span { justify-content: center; min-width: 48px; padding: 0 12px; }
+.scale-ends { display: flex; justify-content: space-between; max-width: 296px; margin-top: 8px; font-size: 12.5px; color: var(--muted); }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.form-foot p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+.contact-done { justify-items: start; gap: 14px; }
+.contact-done svg { width: 40px; height: 40px; color: var(--eased); }
+.contact-done h2 { margin: 0; font: 500 clamp(28px, 3vw, 38px)/1.1 var(--serif); color: var(--head); letter-spacing: -.015em; }
+.contact-done p { margin: 0; color: var(--muted); max-width: 460px; }
+.contact-done a:not(.btn) { color: var(--accent-ink); font-weight: 600; }
+
+/* Inner pages leave a little more room above the footer */
+.page-main + .site-foot { padding-top: clamp(72px, 9vw, 120px); }
+.foot-col a[aria-current="page"] { color: #fff; }
+
+/* The prepared message after the contact form */
+.msg-box { width: 100%; display: grid; gap: 10px; margin-top: 6px; }
+.msg-to { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 14px; color: var(--muted); }
+.msg-to b { font: 500 20px/1.3 var(--serif); color: var(--head); user-select: all; }
+.msg-box pre { margin: 0; max-height: 260px; overflow: auto; padding: 16px 18px; border-radius: 16px; background: var(--white); font: 400 14px/1.6 var(--sans); color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 6px; }
+.btn-quiet { min-height: 44px; padding: 0 18px; font-size: 14.5px; color: var(--head); background: var(--white); }
+.btn-quiet:hover { background: #fff; }
+.link-btn { appearance: none; border: 0; background: none; padding: 0; cursor: pointer; font-size: 14.5px; font-weight: 600; color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
