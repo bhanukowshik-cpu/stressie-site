@@ -4,35 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Stressie · Wellness, all around you</title>
-<meta name="description" content="Stressie is a stress app for busy days. Check in, take a two-minute reset, then find massages, studios and community events near you. For yourself, or for the teams you lead.">
-<meta name="theme-color" content="#FFFAF2">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<title>Stressie · Wellness for shift teams</title>
+<meta name="description" content="Give your shift teams two-minute resets, sleep help after any shift, and perks at places near work. See anonymous team trends, never names.">
+<meta name="theme-color" content="#1C1B17">
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css" rel="stylesheet">
-<link rel="stylesheet" href="story.css">
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="page-home">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-check-c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.3l3 3 6-6.3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
-    <!-- Card meta icons, drawn after the SF Symbols used in Figma -->
-    <symbol id="i-place" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="6.4" r="3.2"/><path d="M12 9.6V16.4"/><path d="M8.3 14.7C5.6 15.2 4 16 4 17c0 1.7 3.6 3.1 8 3.1s8-1.4 8-3.1c0-1-1.6-1.8-4.3-2.3"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5h-3.5"/></symbol>
-    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01" stroke-width="2.6"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.3l-5.8 3.1 1.1-6.4-4.7-4.6 6.5-.9z" fill="#FBBC05"/></symbol>
-    <symbol id="i-spots" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="7.5" r="3.4"/><circle cx="16.5" cy="7.5" r="3.4"/><circle cx="7.5" cy="16.5" r="3.4"/><circle cx="16.5" cy="16.5" r="3.4"/></symbol>
-    <symbol id="i-laurel" viewBox="0 0 14 22" fill="currentColor"><path d="M10.5 21.2C5.6 18.6 2.6 13.4 3.4 5.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="3.6" cy="4.6" rx="1.4" ry="2.8" transform="rotate(12 3.6 4.6)"/><ellipse cx="1.9" cy="9" rx="1.3" ry="2.6" transform="rotate(-38 1.9 9)"/><ellipse cx="6" cy="9.4" rx="1.3" ry="2.6" transform="rotate(42 6 9.4)"/><ellipse cx="3" cy="13.6" rx="1.3" ry="2.6" transform="rotate(-48 3 13.6)"/><ellipse cx="7.4" cy="14" rx="1.3" ry="2.5" transform="rotate(48 7.4 14)"/><ellipse cx="5.8" cy="17.8" rx="1.2" ry="2.4" transform="rotate(-58 5.8 17.8)"/></symbol>
-    <symbol id="i-apple" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-3.8zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></symbol>
-    <symbol id="i-gplay" viewBox="0 0 24 24"><path d="M4 3.2v17.6c0 .5.5.8.9.6l9.6-9.4L4.9 2.6c-.4-.2-.9.1-.9.6z" fill="#FFB679"/><path d="M14.5 12l2.9 2.9 3.4-1.9c.8-.5.8-1.6 0-2l-3.4-1.9z" fill="#F78521"/><path d="M4.9 21.4l12.5-6.5-2.9-2.9z" fill="#F05F1C"/><path d="M4.9 2.6l9.6 9.4 2.9-2.9z" fill="#FFCB94"/></symbol>
-    <!-- The hand that plays each close-up. Fingertip sits at (18, 4). -->
+    <clipPath id="mclip"><rect width="100" height="100" rx="23"/></clipPath>
+    <symbol id="mark" viewBox="0 0 100 100"><rect width="100" height="100" rx="23" fill="#D3451D"/><g clip-path="url(#mclip)"><path transform="rotate(-15 50 50)" d="M130 36.2H40A7.2 7.2 0 0 0 40 50.6H60A7.2 7.2 0 0 1 60 65H-30" fill="none" stroke="#fff" stroke-width="13.5"/></g></symbol>
+    <symbol id="mark-s" viewBox="0 0 100 100"><g clip-path="url(#mclip)"><path transform="rotate(-15 50 50)" d="M130 36.2H40A7.2 7.2 0 0 0 40 50.6H60A7.2 7.2 0 0 1 60 65H-30" fill="none" stroke="currentColor" stroke-width="13.5"/></g></symbol>
     <symbol id="i-hand" viewBox="0 0 64 64">
       <path d="M13 38V9a5 5 0 0 1 10 0v18a4.5 4.5 0 0 1 9 0v2a4.5 4.5 0 0 1 9 0v3a4 4 0 0 1 8 0v13c0 9-7 15-16 15h-5c-6 0-10-3-13-8l-8-11c-1.5-2.4-.5-5.3 2-6.3 2.2-.8 3.6.2 5 2.3z" fill="#FFFDF9" stroke="#3A2E22" stroke-width="2.2" stroke-linejoin="round"/>
       <path d="M32 29v7M41 32v6M23 27v8" fill="none" stroke="#3A2E22" stroke-width="2" stroke-linecap="round"/>
@@ -44,302 +35,417 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="wordmark" href="#top" aria-label="Stressie home"></a>
+    <a class="brand" href="index.html" aria-label="Stressie home"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg>Stressie</a>
+    <div class="aud" role="group" aria-label="Who Stressie is for"><a href="index.html" aria-current="page">For companies</a><a href="partners.html">For partners</a></div>
     <ul class="nav-links">
-      <li><a href="#ways" data-mode="you">For yourself</a></li>
-      <li><a href="#ways" data-mode="teams">For teams</a></li>
-      <li><a href="#vendors">Partners</a></li>
+      <li><a href="#app">Your team's app</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#proof">Results</a></li>
     </ul>
-    <a class="btn btn-orange btn-sm" href="#get">Download the app</a>
+    <a class="btn btn-light btn-sm" href="contact.html">Book a demo</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Menu"><i class="ph ph-list" aria-hidden="true"></i></button>
   </div>
 </header>
+<nav class="sheet" id="sheet" aria-label="Menu" hidden>
+  <div class="aud aud-sheet" role="group" aria-label="Who Stressie is for"><a href="index.html" aria-current="page">For companies</a><a href="partners.html">For partners</a></div>
+  <a href="#app"><i class="ph ph-device-mobile" aria-hidden="true"></i>Your team's app</a>
+  <a href="#how"><i class="ph ph-hand-tap" aria-hidden="true"></i>How it works</a>
+  <a href="#industries"><i class="ph ph-buildings" aria-hidden="true"></i>Industries</a>
+  <a href="#proof"><i class="ph ph-chart-line-up" aria-hidden="true"></i>Results</a>
+  <p>Get started</p>
+  <a href="contact.html"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a demo</a>
+  <a href="get.html"><i class="ph ph-device-mobile" aria-hidden="true"></i>Invited by your employer? Get the app</a>
+</nav>
 
 <main id="main">
-
-  <!-- ============ What Stressie is: a live map with Stressie's wellness and community pins ============ -->
+  <!-- ============ Hero: the marketplace, places and events near you on a dark map ============ -->
   <section class="hero" id="top">
     <div class="map" id="map" aria-hidden="true"></div>
     <div class="map-veil" aria-hidden="true"></div>
     <div class="spots" aria-hidden="true">
-      <span class="you-dot" style="--x:52%;--y:42%;--mx:56%;--my:26%"></span>
-      <span class="mk m-hide" style="--x:40%;--y:22%"><img src="img/pin-wellness.webp" alt=""><b>Morning Yoga</b></span>
-      <span class="mk" style="--x:51%;--y:13%;--mx:16%;--my:12%"><img src="img/pin-community.webp" alt=""><b>Community Dinner</b></span>
-      <span class="mk" data-card="0" style="--x:30%;--y:44%;--mx:24%;--my:36%"><img src="img/pin-wellness.webp" alt=""><b>Reset Massage</b></span>
-      <span class="mk m-hide" style="--x:59%;--y:30%"><img src="img/pin-community.webp" alt=""><b>Coffee &amp; Connect</b></span>
-      <span class="mk m-hide" style="--x:45%;--y:60%"><img src="img/pin-wellness.webp" alt=""><b>Sauna Reset</b></span>
-      <span class="mk label-left" data-card="1" style="--x:70%;--y:40%;--mx:82%;--my:16%"><img src="img/pin-community.webp" alt=""><b>Pottery &amp; Coffee</b></span>
-      <span class="mk m-hide" style="--x:61%;--y:62%"><img src="img/pin-wellness.webp" alt=""><b>Sound Bath</b></span>
+      <span class="you" style="--x:51%;--y:40%;--mx:63%;--my:41%"></span>
+      <span class="pin m-hide" style="--x:40%;--y:22%"><span class="pin-dot"><i class="ph-fill ph-flower-lotus"></i></span><b>Morning Yoga</b></span>
+      <span class="pin" style="--x:51%;--y:13%;--mx:16%;--my:12%"><span class="pin-dot"><i class="ph-fill ph-users-three"></i></span><b>Community Dinner</b></span>
+      <span class="pin" style="--x:30%;--y:44%;--mx:24%;--my:37%"><span class="pin-dot"><i class="ph-fill ph-hand-heart"></i></span><b>Reset Massage</b></span>
+      <span class="pin m-hide" style="--x:59%;--y:29%"><span class="pin-dot"><i class="ph-fill ph-coffee"></i></span><b>Corner Coffee</b></span>
+      <span class="pin m-hide" style="--x:44%;--y:60%"><span class="pin-dot"><i class="ph-fill ph-barbell"></i></span><b>Ironworks Gym</b></span>
+      <span class="pin left" style="--x:70%;--y:40%;--mx:84%;--my:19%"><span class="pin-dot"><i class="ph-fill ph-users-three"></i></span><b>Pottery &amp; Coffee</b></span>
+      <span class="pin m-hide" style="--x:61%;--y:62%"><span class="pin-dot"><i class="ph-fill ph-headphones"></i></span><b>Sound Bath</b></span>
 
-      <!-- Two small upright cards, next to their pins: photo on top, name, title, then points and the button -->
-      <article class="mcard mc-0" data-card="0">
-        <div class="mc-photo"><img src="img/offer-massage.webp" alt=""><span class="mc-badge"><svg><use href="#i-laurel"/></svg>Stressie Partner</span></div>
-        <p class="mc-name">Renew Wellness Studio</p>
-        <h3>60 Min, Deep tissue recovery massage</h3>
-        <div class="mc-foot"><span class="mc-coin"><img src="img/coin.webp" alt=""><b>220</b></span><span class="mc-btn">Redeem<svg><use href="#i-arrow"/></svg></span></div>
+      <article class="offer of-0">
+        <div class="of-photo"><img src="img/offer-massage.webp" alt=""><span class="of-tag"><i class="ph-fill ph-seal-check"></i>Stressie Partner</span></div>
+        <p class="of-place">Renew Wellness Studio · 0.4 mi</p>
+        <h3>60 min deep tissue massage</h3>
+        <div class="of-foot"><span class="of-pts"><i class="ph-fill ph-coins"></i>220 <small>points</small></span><span class="of-btn">Redeem</span></div>
       </article>
-      <article class="mcard mc-1" data-card="1">
-        <div class="mc-photo"><img src="img/people-designer.webp" alt=""><span class="mc-badge"><svg><use href="#i-laurel"/></svg>Stressie Partner</span></div>
-        <p class="mc-name">Host : Lupita</p>
+      <article class="offer of-1">
+        <div class="of-photo"><img src="img/people-designer.webp" alt=""><span class="of-tag"><i class="ph-fill ph-seal-check"></i>Stressie Partner</span></div>
+        <p class="of-place">Hosted by Lupita · Tonight</p>
         <h3>Pottery &amp; Coffee Social</h3>
-        <div class="mc-foot"><span class="mc-coin"><img src="img/coin.webp" alt=""><b>220</b></span><span class="mc-btn">Register<svg><use href="#i-arrow"/></svg></span></div>
+        <div class="of-foot"><span class="of-pts"><i class="ph-fill ph-coins"></i>120 <small>points</small></span><span class="of-btn">Join</span></div>
       </article>
     </div>
 
     <div class="wrap hero-copy">
-      <h1 class="display display-1">Wellness, all around you.</h1>
-      <p class="italic">Reset your stress, then find what helps near you.</p>
-      <p class="lead hero-lead">A stress app for busy days.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-orange" href="#get">Download the app <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-line" href="#ways" data-mode="teams">Get it for your team</a>
+      <span class="chip"><i class="ph ph-buildings" aria-hidden="true"></i>For hospitality, healthcare, logistics and manufacturing teams</span>
+      <h1 class="h1">Give your shift teams wellness, <em>all around them.</em></h1>
+      <p class="lead">Two-minute resets for the break, sleep help after any shift, and perks at places near work. You see anonymous team trends, never names.</p>
+      <div class="hero-get">
+        <div class="qr-card big" data-qr><div class="qr-box" aria-hidden="true"></div><span><b>Scan to get Stressie</b><small>Free on iPhone and Android</small></span></div>
+        <div class="badges hero-badges">
+          <a class="badge" href="https://apps.apple.com/us/app/stressieapp/id6737459302"><i class="ph-fill ph-apple-logo" aria-hidden="true"></i><span><small>Download on the</small><b>App Store</b></span></a>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.stressiefrontend.app"><i class="ph-fill ph-google-play-logo" aria-hidden="true"></i><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Two ways in: one pinned section. The headline and toggle stay in view while the steps change. ============ -->
-  <section class="flow" id="ways" aria-label="How Stressie helps">
+  <!-- ============ Your team's app: one pinned section, a hand plays each close-up ============ -->
+  <section class="flow" id="app" aria-label="What your team gets">
     <div class="flow-pin">
-      <div class="wrap flow-frame">
-        <div class="flow-head">
-          <div class="flow-title">
-            <span class="kicker">Two ways in</span>
-            <h2 class="display display-2">Stressie is for <em class="who">you</em>.</h2>
-            <p class="lead flow-sub">For the long shifts, the full inbox and the nights you can't switch off.</p>
+      <div class="wrap">
+        <div class="flow-grid">
+          <div class="flow-text">
+            <p class="eyebrow"><i class="ph ph-device-mobile" aria-hidden="true"></i>What your team gets</p>
+            <h2 class="h2">Three taps to a better shift.</h2>
+            <div class="fs-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><span class="fs-count">Step 1 of 3</span></div>
+            <div class="fs-wrap"><span class="fs-rail" aria-hidden="true"><i></i></span><ol class="fs-list">
+              <li class="fs is-on"><button type="button" class="fs-head"><span class="fs-n"><b>1</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">Take a moment.</span></button>
+                <div class="fs-body"><div><p>Breathe for a minute, stretch for two, write a thought down, or talk it through out loud.</p><span class="note"><i class="ph ph-timer" aria-hidden="true"></i>Made for a break, the bus or bed.</span></div></div></li>
+              <li class="fs"><button type="button" class="fs-head"><span class="fs-n"><b>2</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">Find what helps nearby.</span></button>
+                <div class="fs-body"><div><p>See coffee, gyms, classes and community events near work that welcome Stressie members.</p><span class="note"><i class="ph ph-map-pin" aria-hidden="true"></i>Places and events, on one map.</span></div></div></li>
+              <li class="fs"><button type="button" class="fs-head"><span class="fs-n"><b>3</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">Keep it in your Wallet.</span></button>
+                <div class="fs-body"><div><p>Balances, discounts and points live in one place. Show it at the counter.</p><span class="note"><i class="ph ph-coins" aria-hidden="true"></i>Every moment earns points.</span></div></div></li>
+            </ol></div>
           </div>
-          <div class="toggle" role="tablist" aria-label="Choose who Stressie is for" data-mode="you">
-            <span class="toggle-thumb" aria-hidden="true"></span>
-            <button type="button" role="tab" id="tab-you" aria-controls="mode-you" aria-selected="true">For yourself</button>
-            <button type="button" role="tab" id="tab-teams" aria-controls="mode-teams" aria-selected="false" tabindex="-1">For teams you lead</button>
-          </div>
-        </div>
-        <div class="flow-group mode is-on" id="mode-you" role="tabpanel" aria-labelledby="tab-you">
-          <div class="flow-grid">
-            <div class="flow-text">
-              <div class="fs-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
-              <div class="flow-steps">
-                <span class="flow-rail" aria-hidden="true"><i></i></span>
-                <ol class="fs-list">
-                  <li class="fs is-on"><button type="button" class="fs-head"><span class="fs-n">1</span><span class="fs-t">Notice how you feel.</span></button>
-                    <div class="fs-body"><div><p>Slide to check in. It takes ten seconds, at work or off work. Over the week, Stressie shows you the pattern.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>No scores. No grades.</span></div></div></li>
-                  <li class="fs"><button type="button" class="fs-head"><span class="fs-n">2</span><span class="fs-t">Reset in two minutes.</span></button>
-                    <div class="fs-body"><div><p>Stressie suggests a short breathing or stretching reset that fits how you feel right now.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>Works on a break, on the bus or before bed.</span></div></div></li>
-                  <li class="fs"><button type="button" class="fs-head"><span class="fs-n">3</span><span class="fs-t">Find what helps, nearby.</span></button>
-                    <div class="fs-body"><div><p>See massages, studios and community events around you. Every check-in and reset earns points you can spend there.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>Starting in San Francisco<span class="tbc">confirm</span></span></div></div></li>
-                </ol>
-              </div>
-                <a class="btn btn-orange btn-sm flow-cta" href="#get">Download the app <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            </div>
-            <div class="flow-stages">
-              <div class="stage is-on" data-scene="checkin" style="--bg:url('img/feature-1.webp')" role="img" aria-label="A hand slides the check-in from calm to stressed. Stressie saves it, adds five points and updates the week."><div class="art">
-                    <div class="ui ui-checkin" aria-hidden="true">
-                      <div class="ci-a" data-show>
-                        <div class="ui-row"><span class="ui-chip">At work</span><span class="ui-pts"><img src="img/coin.webp" alt=""><span class="pv">1,240</span></span></div>
-                        <p class="ui-q">How are you feeling in this moment?</p>
-                        <svg class="ui-shape" viewBox="-110 -110 220 220"><path class="u1"/><path class="u2"/><path class="u3"/></svg>
-                        <p class="ui-word">Lightly stressed</p>
-                        <div class="ci-bottom">
-                          <div class="ci-slide" data-show>
-                            <div class="ui-slider"><span class="fill"></span><span class="ui-thumb"></span></div>
-                            <div class="ui-ends"><span>Not stressed</span><span>Very stressed</span></div>
-                          </div>
-                          <div class="ci-ok off" data-show><svg><use href="#i-check-c"/></svg>Checked in · <b>+5 pts</b></div>
-                        </div>
-                      </div>
-                      <div class="ci-b off" data-show>
-                        <div class="ui-row"><span class="ui-eyebrow">Stress landscape</span><span class="ui-pts"><img src="img/coin.webp" alt=""><span>1,245</span></span></div>
-                        <p class="ui-q">Stress is building this week.</p>
-                        <svg class="ci-week" viewBox="0 0 300 120">
-                          <defs><linearGradient id="cwg" x1="0" x2="1"><stop offset="0" stop-color="#FFCB94"/><stop offset="1" stop-color="#EA6E17"/></linearGradient></defs>
-                          <g stroke="#B08A55" stroke-opacity=".35" stroke-dasharray="2 4"><line x1="0" x2="300" y1="20" y2="20"/><line x1="0" x2="300" y1="60" y2="60"/><line x1="0" x2="300" y1="100" y2="100"/></g>
-                          <path d="M20 86C42 84 58 78 80 76S124 62 140 58" fill="none" stroke="url(#cwg)" stroke-width="3" stroke-linecap="round"/>
-                          <path class="today-seg" d="M140 58C164 52 184 40 200 34" fill="none" stroke="#EA6E17" stroke-width="3" stroke-linecap="round"/>
-                          <circle cx="20" cy="86" r="6" fill="#FFCB94" stroke="#FFFDF9" stroke-width="2.5"/>
-                          <circle cx="80" cy="76" r="6" fill="#FDB46F" stroke="#FFFDF9" stroke-width="2.5"/>
-                          <circle cx="140" cy="58" r="6" fill="#F99D4E" stroke="#FFFDF9" stroke-width="2.5"/>
-                          <circle class="today" cx="200" cy="34" r="7.5" fill="#EA6E17" stroke="#FFFDF9" stroke-width="2.5"/>
-                          <circle cx="260" cy="100" r="4" fill="none" stroke="#B08A55" stroke-opacity=".4" stroke-dasharray="2 3"/>
-                        </svg>
-                        <div class="ci-days"><span>Mon</span><span>Tue</span><span>Wed</span><b>Thu</b><span>Fri</span></div>
-                      </div>
+          <div class="flow-stages">
+            <div class="flow-bar" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+            <div class="stage is-on" data-scene="moment" role="img" aria-label="In the app, a hand taps Breathe. A breathing circle grows and shrinks, then five points are added.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app" aria-hidden="true">
+                <div class="app-row"><p class="app-title">Home</p><div class="app-row"><span class="round work"><i class="ph ph-briefcase"></i></span><span class="round"><i class="ph ph-waveform"></i></span><span class="round av">SR</span></div></div>
+                <div class="m-one" data-show>
+                  <p class="app-sub">Take a moment</p>
+                  <div class="moments">
+                    <div class="mo mo-breathe"><i class="ph ph-wind"></i><b>Breathe</b><span>1 min</span></div>
+                    <div class="mo"><i class="ph ph-person-simple-tai-chi"></i><b>Move freely</b><span>Stretch · 2 min</span></div>
+                    <div class="mo"><i class="ph ph-pencil-simple"></i><b>Clear your mind</b><span>Write a thought</span></div>
+                    <div class="mo"><svg class="mark"><use href="#mark-s"/></svg><b>Talk it through</b><span>Out loud</span></div>
+                  </div>
+                </div>
+                <div class="m-two gone" data-show>
+                  <div class="breath">
+                    <div class="bloom-wrap">
+                      <svg class="bloom" viewBox="-130 -130 260 260">
+                        <defs>
+                          <radialGradient id="petal" r="50%"><stop offset="0" stop-color="#FFD9C9" stop-opacity=".95"/><stop offset=".55" stop-color="#F3683E" stop-opacity=".62"/><stop offset="1" stop-color="#B93A17" stop-opacity=".12"/></radialGradient>
+                          <radialGradient id="halo" r="50%"><stop offset="0" stop-color="#F3683E" stop-opacity=".42"/><stop offset="1" stop-color="#F3683E" stop-opacity="0"/></radialGradient>
+                        </defs>
+                        <circle class="halo" r="130" fill="url(#halo)"/>
+                        <g class="petals"><circle r="26" fill="#F3683E"/><circle r="26" fill="#FF9F7A"/><circle r="26" fill="#D3451D"/><circle r="26" fill="#F3683E"/><circle r="26" fill="#FF9F7A"/><circle r="26" fill="#D3451D"/><circle r="26" fill="#F3683E"/><circle r="26" fill="#FF9F7A"/></g>
+                      </svg>
+                      <span class="breath-count">4</span>
+                    </div>
+                    <p class="breath-phase" style="margin:0">Breathe in</p>
+                    <div class="breath-foot" style="display:grid">
+                      <div class="breath-steps" data-show style="grid-area:1/1;justify-self:center"><span class="on">In · 4</span><span>Hold · 2</span><span>Out · 4</span></div>
+                      <div class="done-pill off" data-show style="grid-area:1/1"><i class="ph-fill ph-check-circle"></i>Nicely done · <b>+5 points</b></div>
                     </div>
                   </div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
-              <div class="stage" data-scene="reset" style="--bg:url('img/feature-2.webp')" role="img" aria-label="A hand taps Start on a matched box breath reset. A breathing circle grows and shrinks, then five points are added."><div class="art">
-                <div class="ui" aria-hidden="true">
-                  <div class="rs-one" data-show>
-                    <span class="ui-eyebrow">Matched for you</span>
-                    <div class="rs-card"><img src="img/art-ember.webp" alt=""><div><b>Box breath</b><span>1 minute · slows your body down</span></div></div>
-                    <button class="ui-btn rs-start" type="button" tabindex="-1">Start reset</button>
-                  </div>
-                  <div class="rs-two gone" data-show>
-                    <div class="rs-breath"><svg class="rs-ring" viewBox="0 0 176 176"><circle class="t" cx="88" cy="88" r="85"/><circle class="p" cx="88" cy="88" r="85"/></svg><div class="rs-orb"></div><span class="rs-phase">Breathe in</span></div>
-                    <div class="rs-done off" data-show><span>Nicely done.</span><b>+5 pts</b></div>
-                  </div>
-                </div></div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
-              <div class="stage" data-scene="map" style="--bg:url('img/feature-3.webp')" role="img" aria-label="A hand taps a pin on the map, opens a massage offer and redeems it with points."><div class="art">
-                <div class="ui ui-map" aria-hidden="true">
-                  <svg class="streets" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-                    <rect class="park" x="248" y="176" width="130" height="96" rx="16"/>
-                    <path d="M-10 210C80 200 140 160 220 150S360 120 420 90"/>
-                    <path d="M120 -10C130 80 150 160 170 310"/>
-                    <path class="thin" d="M-10 92L420 70"/><path class="thin" d="M300 -10L262 310"/><path class="thin" d="M-10 152L420 262"/>
-                  </svg>
-                  <span class="map-you" style="left:28%;top:62%"></span>
-                  <img class="map-pin" data-pin="a" src="img/pin-community.webp" alt="" style="left:57%;top:36%">
-                  <img class="map-pin" data-pin="b" src="img/pin-wellness.webp" alt="" style="left:80%;top:52%">
-                  <div class="map-card off" data-show><img src="img/offer-massage.webp" alt=""><div><small>Renew Wellness Studio · 0.8 mi</small><b>60-min deep tissue massage</b><span class="cost"><img src="img/coin.webp" alt="">220 pts</span></div><button class="ui-btn sm map-redeem" type="button" tabindex="-1">Redeem</button></div>
-                  <div class="map-code off" data-show><span>Show this at the front desk</span><b>RNW 4821</b></div>
-                </div></div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
+                </div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
             </div>
-          </div>
-        </div>
-        <div class="flow-group mode" id="mode-teams" role="tabpanel" aria-labelledby="tab-teams" hidden>
-          <div class="flow-grid">
-            <div class="flow-text">
-              <div class="fs-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
-              <div class="flow-steps">
-                <span class="flow-rail" aria-hidden="true"><i></i></span>
-                <ol class="fs-list">
-                  <li class="fs is-on"><button type="button" class="fs-head"><span class="fs-n">1</span><span class="fs-t">Give everyone a way in.</span></button>
-                    <div class="fs-body"><div><p>Share one company code. Your team joins in minutes, on their own phones.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>Built for shift and frontline work, not desk schedules.</span></div></div></li>
-                  <li class="fs"><button type="button" class="fs-head"><span class="fs-n">2</span><span class="fs-t">They reset. You stay out of it.</span></button>
-                    <div class="fs-body"><div><p>Check-ins are private. You never see names or anyone's answers, only how the team is doing as a whole.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>Nothing shows until there's enough data to protect everyone.</span></div></div></li>
-                  <li class="fs"><button type="button" class="fs-head"><span class="fs-n">3</span><span class="fs-t">See what's weighing on the team.</span></button>
-                    <div class="fs-body"><div><p>Get anonymous trends and simple next steps, like a ten-minute team Huddle.</p><span class="note"><svg aria-hidden="true"><use href="#i-dot"/></svg>Example data shown</span></div></div></li>
-                </ol>
-              </div>
-                <a class="btn btn-orange btn-sm flow-cta" href="contact.html">Book a demo <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <div class="stage" data-scene="discover" role="img" aria-label="On the Discover map, a hand taps a gym and adds three Stressie Days to the Wallet.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app app-map" aria-hidden="true">
+                <svg class="streets" viewBox="0 0 372 420" preserveAspectRatio="xMidYMid slice">
+                  <path class="water" d="M0 330C80 318 140 360 220 352S330 330 372 340V420H0Z" style="fill:#1B2629;stroke:none"/>
+                  <rect class="park" x="226" y="120" width="120" height="92" rx="16" style="fill:#232A21;stroke:none"/>
+                  <path d="M-10 250C80 240 140 200 220 190S340 160 390 130"/>
+                  <path d="M120 -10C130 80 150 170 170 330"/>
+                  <path class="thin" d="M-10 120L390 96"/><path class="thin" d="M300 -10L262 340"/><path class="thin" d="M-10 182L390 300"/><path class="thin" d="M60 -10L40 330"/>
+                </svg>
+                <div class="app-row"><p class="app-title">Discover</p><span class="round"><i class="ph ph-magnifying-glass"></i></span></div>
+                <div class="map-chips"><span>Near you</span><span>Open now</span><span>Events</span></div>
+                <span class="you" style="left:30%;top:60%"></span>
+                <span class="pin" style="--x:44%;--y:36%"><span class="pin-dot"><i class="ph-fill ph-flower-lotus"></i></span></span>
+                <span class="pin" style="--x:62%;--y:47%"><span class="pin-dot"><i class="ph-fill ph-coffee"></i></span></span>
+                <span class="pin" style="--x:78%;--y:62%" data-pin="b"><span class="pin-dot"><i class="ph-fill ph-barbell"></i></span></span>
+                <span class="pin" style="--x:20%;--y:38%"><span class="pin-dot"><i class="ph-fill ph-users-three"></i></span></span>
+                <div class="map-sheet off" data-show>
+                  <div class="pass gym"><div class="pass-top"><span class="pass-name"><i class="ph ph-barbell"></i>Ironworks Gym</span><span class="pass-val">3 Stressie Days</span></div></div>
+                  <div class="meta"><span>0.4 mi · Open until 10 PM</span><span>120 points</span></div>
+                  <button class="mini-btn map-add" type="button" tabindex="-1"><i class="ph ph-plus"></i>Add to Wallet</button>
+                </div>
+                <div class="map-added off" data-show><i class="ph-fill ph-check-circle"></i>Added to your Wallet</div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
             </div>
-            <div class="flow-stages">
-              <div class="stage is-on" data-scene="code" style="--bg:url('img/feature-4.webp')" role="img" aria-label="A hand types a company code and taps Join. The person is in, and their check-ins stay private."><div class="art">
-                <div class="ui" aria-hidden="true">
-                  <span class="ui-eyebrow">Join your team</span>
-                  <p class="ui-q">Enter your company code</p>
-                  <p class="ui-sub">Your employer gives you one if they offer Stressie at work.</p>
-                  <div class="code-field"><span class="code-text"></span><i class="caret"></i></div>
-                  <button class="ui-btn code-join" type="button" tabindex="-1">Join</button>
-                  <div class="code-ok off" data-show><svg style="color:#447B0E"><use href="#i-check-c"/></svg>You're in. Your check-ins stay private.</div>
-                </div></div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
-              <div class="stage" data-scene="anon" style="--bg:url('img/feature-1.webp')" role="img" aria-label="A manager's view shows 142 anonymous check-ins. A hand taps Show names, and Stressie explains names are never shown."><div class="art">
-                <div class="ui" aria-hidden="true">
-                  <div class="ui-row"><div><span class="ui-eyebrow">Team check-ins</span><p class="ui-sub" style="margin-top:2px">This week</p></div><span class="big">142</span></div>
-                  <div class="anon">
-                    <div><i></i><s style="width:82%"></s><em>Anonymous</em></div>
-                    <div><i></i><s style="width:58%"></s><em>Anonymous</em></div>
-                    <div><i></i><s style="width:90%"></s><em>Anonymous</em></div>
-                    <div><i></i><s style="width:66%"></s><em>Anonymous</em></div>
-                  </div>
-                  <div style="position:relative">
-                    <button class="ui-btn ghost show-names" type="button" tabindex="-1"><svg><use href="#i-lock"/></svg>Show names</button>
-                    <div class="anon-tip off" data-show>Names are never shown. Everyone stays anonymous.</div>
-                  </div>
-                </div></div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
-              <div class="stage" data-scene="trends" style="--bg:url('img/feature-2.webp')" role="img" aria-label="Bars show the team's top stressors. A hand taps Workload, then starts a suggested team Huddle."><div class="art">
-                <div class="ui" aria-hidden="true">
-                  <span class="ui-eyebrow">Top stressors · this week</span>
-                  <div class="bars">
-                    <div class="b-work"><i style="--c:#EA6E17;--h:.92"></i><span>Workload</span></div>
-                    <div><i style="--c:#F99D4E;--h:.7"></i><span>Breaks</span></div>
-                    <div><i style="--c:#FDB46F;--h:.56"></i><span>Sleep</span></div>
-                    <div><i style="--c:#FFCB94;--h:.42"></i><span>Money</span></div>
-                  </div>
-                  <div class="tr-tip off" data-show>62% of check-ins mention workload</div>
-                  <div class="tr-next"><div><b>Try a team Huddle</b><span>Rest and real breaks · 10 min</span></div><button class="ui-btn sm tr-start" type="button" tabindex="-1">Start</button></div>
-                </div></div>
-                <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
-              </div>
+            <div class="stage" data-scene="wallet" role="img" aria-label="In the Wallet, a hand taps a yoga pass. It shows a code to scan at the front desk.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app app-wallet" aria-hidden="true">
+                <div class="app-row"><p class="app-title">Wallet</p><div class="app-row"><span class="round"><i class="ph ph-clock-counter-clockwise"></i></span><span class="round av">SR</span></div></div>
+                <div class="stack">
+                  <div class="pass coffee"><div class="pass-top"><span class="pass-name"><i class="ph ph-coffee"></i>Corner Coffee</span><span class="pass-val">$18.50<small>Balance</small></span></div></div>
+                  <div class="pass market"><div class="pass-top"><span class="pass-name"><i class="ph ph-tote"></i>Fresh Market</span><span class="pass-val">25% off</span></div></div>
+                  <div class="pass gym"><div class="pass-top"><span class="pass-name"><i class="ph ph-barbell"></i>Ironworks Gym</span><span class="pass-val">3 Stressie Days</span></div></div>
+                  <div class="pass teal big"><div class="pass-top"><span class="pass-name"><i class="ph ph-flower-lotus"></i>Bayside Yoga</span></div>
+                    <div class="pass-offer"><div><b>50% off</b><span>First visit · Stressie members</span></div><span class="qr"><svg viewBox="0 0 21 21" shape-rendering="crispEdges" fill="#1C1B17"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="5" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="15" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="17" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="19" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="14" y="1" width="1" height="1"/><rect x="20" y="1" width="1" height="1"/><rect x="14" y="2" width="1" height="1"/><rect x="16" y="2" width="1" height="1"/><rect x="17" y="2" width="1" height="1"/><rect x="18" y="2" width="1" height="1"/><rect x="20" y="2" width="1" height="1"/><rect x="14" y="3" width="1" height="1"/><rect x="16" y="3" width="1" height="1"/><rect x="17" y="3" width="1" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="20" y="3" width="1" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="16" y="4" width="1" height="1"/><rect x="17" y="4" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="20" y="4" width="1" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="20" y="5" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="15" y="6" width="1" height="1"/><rect x="16" y="6" width="1" height="1"/><rect x="17" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/><rect x="19" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/><rect x="0" y="14" width="1" height="1"/><rect x="1" y="14" width="1" height="1"/><rect x="2" y="14" width="1" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="4" y="14" width="1" height="1"/><rect x="5" y="14" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="0" y="15" width="1" height="1"/><rect x="6" y="15" width="1" height="1"/><rect x="0" y="16" width="1" height="1"/><rect x="2" y="16" width="1" height="1"/><rect x="3" y="16" width="1" height="1"/><rect x="4" y="16" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="0" y="17" width="1" height="1"/><rect x="2" y="17" width="1" height="1"/><rect x="3" y="17" width="1" height="1"/><rect x="4" y="17" width="1" height="1"/><rect x="6" y="17" width="1" height="1"/><rect x="0" y="18" width="1" height="1"/><rect x="2" y="18" width="1" height="1"/><rect x="3" y="18" width="1" height="1"/><rect x="4" y="18" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="0" y="19" width="1" height="1"/><rect x="6" y="19" width="1" height="1"/><rect x="0" y="20" width="1" height="1"/><rect x="1" y="20" width="1" height="1"/><rect x="2" y="20" width="1" height="1"/><rect x="3" y="20" width="1" height="1"/><rect x="4" y="20" width="1" height="1"/><rect x="5" y="20" width="1" height="1"/><rect x="6" y="20" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="11" y="0" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="9" y="1" width="1" height="1"/><rect x="11" y="1" width="1" height="1"/><rect x="12" y="1" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="12" y="2" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="12" y="3" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="11" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="11" y="5" width="1" height="1"/><rect x="9" y="6" width="1" height="1"/><rect x="11" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="8" y="7" width="1" height="1"/><rect x="10" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="14" y="8" width="1" height="1"/><rect x="15" y="8" width="1" height="1"/><rect x="16" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="4" y="9" width="1" height="1"/><rect x="7" y="9" width="1" height="1"/><rect x="9" y="9" width="1" height="1"/><rect x="14" y="9" width="1" height="1"/><rect x="15" y="9" width="1" height="1"/><rect x="17" y="9" width="1" height="1"/><rect x="18" y="9" width="1" height="1"/><rect x="19" y="9" width="1" height="1"/><rect x="20" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="3" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="12" y="10" width="1" height="1"/><rect x="13" y="10" width="1" height="1"/><rect x="14" y="10" width="1" height="1"/><rect x="17" y="10" width="1" height="1"/><rect x="18" y="10" width="1" height="1"/><rect x="19" y="10" width="1" height="1"/><rect x="20" y="10" width="1" height="1"/><rect x="0" y="11" width="1" height="1"/><rect x="2" y="11" width="1" height="1"/><rect x="3" y="11" width="1" height="1"/><rect x="4" y="11" width="1" height="1"/><rect x="5" y="11" width="1" height="1"/><rect x="12" y="11" width="1" height="1"/><rect x="17" y="11" width="1" height="1"/><rect x="18" y="11" width="1" height="1"/><rect x="19" y="11" width="1" height="1"/><rect x="0" y="12" width="1" height="1"/><rect x="1" y="12" width="1" height="1"/><rect x="2" y="12" width="1" height="1"/><rect x="3" y="12" width="1" height="1"/><rect x="4" y="12" width="1" height="1"/><rect x="5" y="12" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="7" y="12" width="1" height="1"/><rect x="8" y="12" width="1" height="1"/><rect x="9" y="12" width="1" height="1"/><rect x="10" y="12" width="1" height="1"/><rect x="13" y="12" width="1" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="15" y="12" width="1" height="1"/><rect x="16" y="12" width="1" height="1"/><rect x="17" y="12" width="1" height="1"/><rect x="20" y="12" width="1" height="1"/><rect x="8" y="13" width="1" height="1"/><rect x="9" y="13" width="1" height="1"/><rect x="10" y="13" width="1" height="1"/><rect x="11" y="13" width="1" height="1"/><rect x="12" y="13" width="1" height="1"/><rect x="14" y="13" width="1" height="1"/><rect x="15" y="13" width="1" height="1"/><rect x="18" y="13" width="1" height="1"/><rect x="20" y="13" width="1" height="1"/><rect x="12" y="14" width="1" height="1"/><rect x="13" y="14" width="1" height="1"/><rect x="14" y="14" width="1" height="1"/><rect x="18" y="14" width="1" height="1"/><rect x="19" y="14" width="1" height="1"/><rect x="13" y="15" width="1" height="1"/><rect x="15" y="15" width="1" height="1"/><rect x="16" y="15" width="1" height="1"/><rect x="17" y="15" width="1" height="1"/><rect x="18" y="15" width="1" height="1"/><rect x="19" y="15" width="1" height="1"/><rect x="9" y="16" width="1" height="1"/><rect x="13" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="15" y="16" width="1" height="1"/><rect x="16" y="16" width="1" height="1"/><rect x="17" y="16" width="1" height="1"/><rect x="8" y="17" width="1" height="1"/><rect x="11" y="17" width="1" height="1"/><rect x="16" y="17" width="1" height="1"/><rect x="17" y="17" width="1" height="1"/><rect x="19" y="17" width="1" height="1"/><rect x="9" y="18" width="1" height="1"/><rect x="10" y="18" width="1" height="1"/><rect x="13" y="18" width="1" height="1"/><rect x="14" y="18" width="1" height="1"/><rect x="15" y="18" width="1" height="1"/><rect x="18" y="18" width="1" height="1"/><rect x="9" y="19" width="1" height="1"/><rect x="11" y="19" width="1" height="1"/><rect x="12" y="19" width="1" height="1"/><rect x="17" y="19" width="1" height="1"/><rect x="20" y="19" width="1" height="1"/><rect x="8" y="20" width="1" height="1"/><rect x="9" y="20" width="1" height="1"/><rect x="10" y="20" width="1" height="1"/><rect x="12" y="20" width="1" height="1"/><rect x="13" y="20" width="1" height="1"/><rect x="14" y="20" width="1" height="1"/><rect x="16" y="20" width="1" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="20" y="20" width="1" height="1"/></svg></span></div></div>
+                </div>
+                <p class="w-hint off" data-show style="margin:10px 0 0;font-size:13px;color:var(--muted);text-align:center">Show this at the front desk</p>
+                <div class="pts"><small>Points</small><b>1,240</b></div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ============ Industries: one large photo tile with the content on top ============ -->
-  <section class="industries" id="industries">
-    <div class="wrap">
-      <div class="ind-tile reveal">
-        <div class="ind-photos" aria-hidden="true">
-          <img class="is-on" src="img/ind-hospitality.webp" alt="" loading="lazy">
-          <img src="img/ind-healthcare.webp" alt="" loading="lazy">
-          <img src="img/ind-logistics.webp" alt="" loading="lazy">
-          <img src="img/ind-manufacturing.webp" alt="" loading="lazy">
-        </div>
-        <div class="ind-shade" aria-hidden="true"></div>
-        <div class="ind-top">
-          <div class="ind-title">
-            <span class="kicker">For teams</span>
-            <h2 class="display display-2">For the teams that keep things running.</h2>
-          </div>
-          <div class="ind-tabs" role="tablist" aria-label="Industries">
-            <span class="ind-thumb" aria-hidden="true"></span>
-            <button type="button" role="tab" id="ind-tab-0" aria-controls="ind-0" aria-selected="true">Hospitality</button>
-            <button type="button" role="tab" id="ind-tab-1" aria-controls="ind-1" aria-selected="false" tabindex="-1">Healthcare</button>
-            <button type="button" role="tab" id="ind-tab-2" aria-controls="ind-2" aria-selected="false" tabindex="-1">Logistics</button>
-            <button type="button" role="tab" id="ind-tab-3" aria-controls="ind-3" aria-selected="false" tabindex="-1">Manufacturing</button>
-          </div>
-        </div>
-        <div class="ind-panels">
-          <div class="ind-panel" id="ind-0" role="tabpanel" aria-labelledby="ind-tab-0">
-            <h3>Hospitality</h3>
-            <p>Hotel and restaurant teams work long, uneven shifts on their feet. Stressie gives them a reset they can do on a break, and perks close to where they work.</p>
-            <a class="btn btn-orange btn-sm" href="contact.html#hospitality">Talk to us about Hospitality <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="ind-panel is-off" id="ind-1" role="tabpanel" aria-labelledby="ind-tab-1">
-            <h3>Healthcare</h3>
-            <p>Nurses, aides and support staff carry other people's stress all day. Stressie gives them a private way to check in, and two-minute resets between rounds.</p>
-            <a class="btn btn-orange btn-sm" href="contact.html#healthcare">Talk to us about Healthcare <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="ind-panel is-off" id="ind-2" role="tabpanel" aria-labelledby="ind-tab-2">
-            <h3>Logistics</h3>
-            <p>Warehouse and delivery teams move fast, often through the night. Stressie fits into the shift, with resets that work standing up and no desk needed.</p>
-            <a class="btn btn-orange btn-sm" href="contact.html#logistics">Talk to us about Logistics <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <div class="ind-panel is-off" id="ind-3" role="tabpanel" aria-labelledby="ind-tab-3">
-            <h3>Manufacturing</h3>
-            <p>Line work is physical and repetitive. Stressie offers short stretch and breathing resets for breaks, and anonymous insight into what's wearing the team down.</p>
-            <a class="btn btn-orange btn-sm" href="contact.html#manufacturing">Talk to us about Manufacturing <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ In their words: one big voice, the Ember pilot as proof, then a second voice ============ -->
-  <section class="words" id="words" aria-labelledby="words-title">
+  <!-- ============ Your shift: four moments, and the ring on the wrist ============ -->
+  <section class="sec" id="shift">
+    <div class="wrap shift-grid">
+      <div class="reveal">
+        <div class="sec-head">
+          <p class="eyebrow"><i class="ph ph-clock" aria-hidden="true"></i>Built around their shift</p>
+          <h2 class="h2">From the first alarm to the ride home.</h2>
+          <p class="lead">Stressie fits into the gaps your team already has. Pick a moment in the day to see what it suggests.</p>
+        </div>
+        <div class="times" role="tablist" aria-label="Moments in a shift">
+          <button type="button" class="time" role="tab" aria-controls="wrist" aria-selected="false" tabindex="-1" data-h="5.667" data-time="5:40" data-sub="Before the shift" data-title="Breathe" data-meta="1 min" data-icon="ph-wind"><i class="ph ph-alarm" aria-hidden="true"></i><b>Before the shift<small>5:40 am</small></b><span>Breathe for a minute while the coffee brews.</span></button>
+          <button type="button" class="time" role="tab" aria-controls="wrist" aria-selected="true" data-h="10.250" data-time="10:15" data-sub="On your break" data-title="Move freely" data-meta="Stretch · 2 min" data-icon="ph-person-simple-tai-chi"><i class="ph ph-coffee" aria-hidden="true"></i><b>On your break<small>10:15 am</small></b><span>Stretch for two minutes, or put on a sound and close your eyes.</span></button>
+          <button type="button" class="time" role="tab" aria-controls="wrist" aria-selected="false" tabindex="-1" data-h="14.500" data-time="2:30" data-sub="On the way home" data-title="Talk it through" data-meta="Out loud" data-icon="mark"><i class="ph ph-bus" aria-hidden="true"></i><b>The way home<small>2:30 pm</small></b><span>Talk it through out loud, or find a coffee or a gym near you.</span></button>
+          <button type="button" class="time" role="tab" aria-controls="wrist" aria-selected="false" tabindex="-1" data-h="21.667" data-time="9:40" data-sub="Before bed" data-title="Rain at the window" data-meta="Soft rain · Sleep" data-icon="img:img/sleep-rain.webp"><i class="ph ph-moon" aria-hidden="true"></i><b>Before bed<small>9:40 pm</small></b><span>A bedtime story or soft rain, whenever your night starts.</span></button>
+        </div>
+      </div>
+      <div class="wrist reveal" id="wrist" role="tabpanel" aria-label="What Stressie suggests at this moment">
+        <div class="pattern" data-pattern data-po=".45"></div>
+        <div class="day">
+          <div class="dial">
+            <svg viewBox="-140 -140 280 280" aria-hidden="true">
+              <circle class="track" r="112"/>
+              <circle class="shift" r="112" stroke-dasharray="249.2 703.7" transform="rotate(0.0)"/>
+              <circle class="done" r="112" stroke-dasharray="124.6 703.7" transform="rotate(0.0)"/>
+              <line class="tick major" x1="0.0" y1="-91.0" x2="0.0" y2="-99.0"/><line class="tick" x1="24.3" y1="-90.8" x2="25.6" y2="-95.6"/><line class="tick" x1="47.0" y1="-81.4" x2="49.5" y2="-85.7"/><line class="tick" x1="66.5" y1="-66.5" x2="70.0" y2="-70.0"/><line class="tick" x1="81.4" y1="-47.0" x2="85.7" y2="-49.5"/><line class="tick" x1="90.8" y1="-24.3" x2="95.6" y2="-25.6"/><line class="tick major" x1="91.0" y1="0.0" x2="99.0" y2="0.0"/><line class="tick" x1="90.8" y1="24.3" x2="95.6" y2="25.6"/><line class="tick" x1="81.4" y1="47.0" x2="85.7" y2="49.5"/><line class="tick" x1="66.5" y1="66.5" x2="70.0" y2="70.0"/><line class="tick" x1="47.0" y1="81.4" x2="49.5" y2="85.7"/><line class="tick" x1="24.3" y1="90.8" x2="25.6" y2="95.6"/><line class="tick major" x1="0.0" y1="91.0" x2="0.0" y2="99.0"/><line class="tick" x1="-24.3" y1="90.8" x2="-25.6" y2="95.6"/><line class="tick" x1="-47.0" y1="81.4" x2="-49.5" y2="85.7"/><line class="tick" x1="-66.5" y1="66.5" x2="-70.0" y2="70.0"/><line class="tick" x1="-81.4" y1="47.0" x2="-85.7" y2="49.5"/><line class="tick" x1="-90.8" y1="24.3" x2="-95.6" y2="25.6"/><line class="tick major" x1="-91.0" y1="0.0" x2="-99.0" y2="0.0"/><line class="tick" x1="-90.8" y1="-24.3" x2="-95.6" y2="-25.6"/><line class="tick" x1="-81.4" y1="-47.0" x2="-85.7" y2="-49.5"/><line class="tick" x1="-66.5" y1="-66.5" x2="-70.0" y2="-70.0"/><line class="tick" x1="-47.0" y1="-81.4" x2="-49.5" y2="-85.7"/><line class="tick" x1="-24.3" y1="-90.8" x2="-25.6" y2="-95.6"/><text x="0.0" y="-70.0">12 am</text><text x="70.0" y="0.0">6 am</text><text x="0.0" y="70.0">12 pm</text><text x="-70.0" y="0.0">6 pm</text><circle class="dot" cx="111.6" cy="-9.8" r="6"/><circle class="dot" cx="49.5" cy="100.4" r="6"/><circle class="dot" cx="-68.2" cy="88.9" r="6"/><circle class="dot" cx="-64.2" cy="-91.7" r="6"/>
+              <g class="sel" style="transform:rotate(63.75deg)"><circle cx="112" cy="0" r="10"/></g>
+            </svg>
+            <div class="dial-mid"><b>10:15</b><span>On your break</span></div>
+          </div>
+          <p class="legend"><i aria-hidden="true"></i>Your shift · 6 am to 2:30 pm</p>
+          <div class="suggest">
+            <span class="s-ic"><i class="ph ph-person-simple-tai-chi" aria-hidden="true"></i></span>
+            <span class="s-body"><small>Stressie suggests</small><b>Move freely</b><em>Stretch · 2 min</em></span>
+            <span class="play" aria-hidden="true"><i class="ph-fill ph-play"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Sleep ============ -->
+  <section class="sec" id="sleep">
     <div class="wrap">
-      <header class="words-head reveal">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><i class="ph ph-moon" aria-hidden="true"></i>Sleep</p>
+        <h2 class="h2">Sleep, whenever the night starts.</h2>
+        <p class="lead">Bedtime stories, meditations and sounds for after any shift, even when the night begins at 9 am.</p>
+      </div>
+      <div class="sleep-chips reveal" aria-hidden="true"><span class="chip">All</span><span class="chip">Stories</span><span class="chip">Meditations</span><span class="chip">Sounds</span><span class="chip">Music</span></div>
+      <div class="sleep-grid reveal">
+        <div class="sleep-card"><div class="art-img"><img src="img/sleep-rain.webp" alt="Painting of rain on a cottage window, with a lamp and a mug on the sill" loading="lazy"><span><i class="ph-fill ph-cloud-rain" aria-hidden="true"></i>Sound</span></div><div><b>Rain at the window</b><small>Soft rain</small></div></div>
+        <div class="sleep-card"><div class="art-img"><img src="img/sleep-lamp.webp" alt="Painting of an old piano and a cello in a quiet room" loading="lazy"><span><i class="ph-fill ph-music-note" aria-hidden="true"></i>2:27</span></div><div><b>While the lamp stays on</b><small>Piano and cello</small></div></div>
+        <div class="sleep-list">
+          <div class="sleep-row"><img src="img/sleep-boat.webp" alt="" loading="lazy"><div><b>The Last Boat</b><small>Bedtime story · A quiet homecoming</small></div><span class="dur">1:23<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
+          <div class="sleep-row"><img src="img/sleep-settle.webp" alt="" loading="lazy"><div><b>Let the day settle</b><small>Meditation · A gentle guided pause</small></div><span class="dur">1:06<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
+          <div class="sleep-row"><i class="ph ph-moon-stars" aria-hidden="true"></i><div><b>Made for day sleepers</b><small>Off a night shift? Press play at 9 am. It works the same.</small></div></div>
+        </div>
+      </div>
+      <div class="sleep-when reveal">
+        <div class="sw-head"><b>Your night, whenever it is.</b><span>Stressie works the same at 10 pm or 8 am.</span></div>
+        <div class="sw-chart" role="img" aria-label="A day-shift worker sleeps from 10 pm to 6 am. A night-shift worker sleeps from 8 am to 3 pm.">
+          <div class="sw-row"><span class="sw-label"><i class="ph ph-sun" aria-hidden="true"></i>Day shift</span><div class="sw-bar"><i style="--a:4;--b:12"><span>10 pm to 6 am</span></i></div></div>
+          <div class="sw-row"><span class="sw-label"><i class="ph ph-moon" aria-hidden="true"></i>Night shift</span><div class="sw-bar"><i style="--a:14;--b:21"><span>8 am to 3 pm</span></i></div></div>
+          <div class="sw-axis" aria-hidden="true"><span></span><span>6 pm</span><span>Midnight</span><span>6 am</span><span>Noon</span><span>6 pm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Wallet and rewards ============ -->
+  <section class="sec" id="wallet">
+    <div class="wrap">
+      <div class="wallet-grid">
+        <div class="wallet-demo reveal" aria-hidden="true">
+          <div class="app-row"><p class="app-title" style="margin:0;font:700 34px/1 var(--display);letter-spacing:-.03em">Wallet</p><div class="app-row"><span class="round"><i class="ph ph-magnifying-glass"></i></span><span class="round av">SR</span></div></div>
+          <div class="stack">
+            <div class="pass coffee"><div class="pass-top"><span class="pass-name"><i class="ph ph-coffee"></i>Corner Coffee</span><span class="pass-val">$18.50<small>Balance</small></span></div></div>
+            <div class="pass market"><div class="pass-top"><span class="pass-name"><i class="ph ph-tote"></i>Fresh Market</span><span class="pass-val">25% off</span></div></div>
+            <div class="pass gym"><div class="pass-top"><span class="pass-name"><i class="ph ph-barbell"></i>Ironworks Gym</span><span class="pass-val">3 Stressie Days</span></div></div>
+            <div class="pass teal big open"><div class="pass-top"><span class="pass-name"><i class="ph ph-flower-lotus"></i>Bayside Yoga</span></div>
+              <div class="pass-offer"><div><b>50% off</b><span>First visit · Stressie members</span></div><span class="qr"><svg viewBox="0 0 21 21" shape-rendering="crispEdges" fill="#1C1B17"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="5" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="15" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="17" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="19" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="14" y="1" width="1" height="1"/><rect x="20" y="1" width="1" height="1"/><rect x="14" y="2" width="1" height="1"/><rect x="16" y="2" width="1" height="1"/><rect x="17" y="2" width="1" height="1"/><rect x="18" y="2" width="1" height="1"/><rect x="20" y="2" width="1" height="1"/><rect x="14" y="3" width="1" height="1"/><rect x="16" y="3" width="1" height="1"/><rect x="17" y="3" width="1" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="20" y="3" width="1" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="16" y="4" width="1" height="1"/><rect x="17" y="4" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="20" y="4" width="1" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="20" y="5" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="15" y="6" width="1" height="1"/><rect x="16" y="6" width="1" height="1"/><rect x="17" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/><rect x="19" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/><rect x="0" y="14" width="1" height="1"/><rect x="1" y="14" width="1" height="1"/><rect x="2" y="14" width="1" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="4" y="14" width="1" height="1"/><rect x="5" y="14" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="0" y="15" width="1" height="1"/><rect x="6" y="15" width="1" height="1"/><rect x="0" y="16" width="1" height="1"/><rect x="2" y="16" width="1" height="1"/><rect x="3" y="16" width="1" height="1"/><rect x="4" y="16" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="0" y="17" width="1" height="1"/><rect x="2" y="17" width="1" height="1"/><rect x="3" y="17" width="1" height="1"/><rect x="4" y="17" width="1" height="1"/><rect x="6" y="17" width="1" height="1"/><rect x="0" y="18" width="1" height="1"/><rect x="2" y="18" width="1" height="1"/><rect x="3" y="18" width="1" height="1"/><rect x="4" y="18" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="0" y="19" width="1" height="1"/><rect x="6" y="19" width="1" height="1"/><rect x="0" y="20" width="1" height="1"/><rect x="1" y="20" width="1" height="1"/><rect x="2" y="20" width="1" height="1"/><rect x="3" y="20" width="1" height="1"/><rect x="4" y="20" width="1" height="1"/><rect x="5" y="20" width="1" height="1"/><rect x="6" y="20" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="11" y="0" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="9" y="1" width="1" height="1"/><rect x="11" y="1" width="1" height="1"/><rect x="12" y="1" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="12" y="2" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="12" y="3" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="11" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="11" y="5" width="1" height="1"/><rect x="9" y="6" width="1" height="1"/><rect x="11" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="8" y="7" width="1" height="1"/><rect x="10" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="9" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="14" y="8" width="1" height="1"/><rect x="15" y="8" width="1" height="1"/><rect x="16" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="4" y="9" width="1" height="1"/><rect x="7" y="9" width="1" height="1"/><rect x="9" y="9" width="1" height="1"/><rect x="14" y="9" width="1" height="1"/><rect x="15" y="9" width="1" height="1"/><rect x="17" y="9" width="1" height="1"/><rect x="18" y="9" width="1" height="1"/><rect x="19" y="9" width="1" height="1"/><rect x="20" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="3" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="12" y="10" width="1" height="1"/><rect x="13" y="10" width="1" height="1"/><rect x="14" y="10" width="1" height="1"/><rect x="17" y="10" width="1" height="1"/><rect x="18" y="10" width="1" height="1"/><rect x="19" y="10" width="1" height="1"/><rect x="20" y="10" width="1" height="1"/><rect x="0" y="11" width="1" height="1"/><rect x="2" y="11" width="1" height="1"/><rect x="3" y="11" width="1" height="1"/><rect x="4" y="11" width="1" height="1"/><rect x="5" y="11" width="1" height="1"/><rect x="12" y="11" width="1" height="1"/><rect x="17" y="11" width="1" height="1"/><rect x="18" y="11" width="1" height="1"/><rect x="19" y="11" width="1" height="1"/><rect x="0" y="12" width="1" height="1"/><rect x="1" y="12" width="1" height="1"/><rect x="2" y="12" width="1" height="1"/><rect x="3" y="12" width="1" height="1"/><rect x="4" y="12" width="1" height="1"/><rect x="5" y="12" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="7" y="12" width="1" height="1"/><rect x="8" y="12" width="1" height="1"/><rect x="9" y="12" width="1" height="1"/><rect x="10" y="12" width="1" height="1"/><rect x="13" y="12" width="1" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="15" y="12" width="1" height="1"/><rect x="16" y="12" width="1" height="1"/><rect x="17" y="12" width="1" height="1"/><rect x="20" y="12" width="1" height="1"/><rect x="8" y="13" width="1" height="1"/><rect x="9" y="13" width="1" height="1"/><rect x="10" y="13" width="1" height="1"/><rect x="11" y="13" width="1" height="1"/><rect x="12" y="13" width="1" height="1"/><rect x="14" y="13" width="1" height="1"/><rect x="15" y="13" width="1" height="1"/><rect x="18" y="13" width="1" height="1"/><rect x="20" y="13" width="1" height="1"/><rect x="12" y="14" width="1" height="1"/><rect x="13" y="14" width="1" height="1"/><rect x="14" y="14" width="1" height="1"/><rect x="18" y="14" width="1" height="1"/><rect x="19" y="14" width="1" height="1"/><rect x="13" y="15" width="1" height="1"/><rect x="15" y="15" width="1" height="1"/><rect x="16" y="15" width="1" height="1"/><rect x="17" y="15" width="1" height="1"/><rect x="18" y="15" width="1" height="1"/><rect x="19" y="15" width="1" height="1"/><rect x="9" y="16" width="1" height="1"/><rect x="13" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="15" y="16" width="1" height="1"/><rect x="16" y="16" width="1" height="1"/><rect x="17" y="16" width="1" height="1"/><rect x="8" y="17" width="1" height="1"/><rect x="11" y="17" width="1" height="1"/><rect x="16" y="17" width="1" height="1"/><rect x="17" y="17" width="1" height="1"/><rect x="19" y="17" width="1" height="1"/><rect x="9" y="18" width="1" height="1"/><rect x="10" y="18" width="1" height="1"/><rect x="13" y="18" width="1" height="1"/><rect x="14" y="18" width="1" height="1"/><rect x="15" y="18" width="1" height="1"/><rect x="18" y="18" width="1" height="1"/><rect x="9" y="19" width="1" height="1"/><rect x="11" y="19" width="1" height="1"/><rect x="12" y="19" width="1" height="1"/><rect x="17" y="19" width="1" height="1"/><rect x="20" y="19" width="1" height="1"/><rect x="8" y="20" width="1" height="1"/><rect x="9" y="20" width="1" height="1"/><rect x="10" y="20" width="1" height="1"/><rect x="12" y="20" width="1" height="1"/><rect x="13" y="20" width="1" height="1"/><rect x="14" y="20" width="1" height="1"/><rect x="16" y="20" width="1" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="20" y="20" width="1" height="1"/></svg></span></div></div>
+          </div>
+          <div class="pts"><small>Points</small><b>1,240</b></div>
+          <div class="badges-row"><span><i class="ph ph-person-simple-run"></i></span><span><i class="ph ph-person-simple-walk"></i></span><span><i class="ph ph-ticket"></i></span><span><i class="ph ph-moon-stars"></i></span></div>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow"><i class="ph ph-wallet" aria-hidden="true"></i>Wallet</p>
+          <h2 class="h2">Rewards that keep them <em>coming back.</em></h2>
+          <p class="lead" style="margin-top:18px">Every moment earns points. Your team spends them at places near work, so looking after themselves pays off.</p>
+          <ul class="perks">
+            <li><i class="ph ph-coins" aria-hidden="true"></i><b>Earn as you go</b><span>Points for every breath, stretch and story.</span></li>
+            <li><i class="ph ph-storefront" aria-hidden="true"></i><b>Spend it nearby</b><span>Coffee, groceries, gyms and classes near work that welcome Stressie members.</span></li>
+            <li><i class="ph ph-medal" aria-hidden="true"></i><b>Collect badges</b><span>Small wins for showing up for yourself.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-band reveal">
         <div>
-          <span class="kicker">Built in the field</span>
-          <h2 class="display display-2" id="words-title">In their <em>words</em>.</h2>
+          <span class="soon"><i class="ph ph-sparkle" aria-hidden="true"></i>Coming later</span>
+          <h3 class="h2" style="font-size:clamp(30px,3.4vw,46px);margin-top:16px">The Stressie card.</h3>
+          <p>When your Wallet holds money, it gets a card. Ink metal, the mark cut in, no numbers on the front.</p>
         </div>
-        <p class="lead">Shaped in a six-month pilot at Ember Kitchen in Austin, with managers and frontline staff.</p>
-      </header>
+        <div class="cards" aria-hidden="true">
+          <div class="metal back"><div class="pattern" data-pattern data-ps="15" data-gap="34" data-po=".14"></div><b>Stressie</b></div>
+          <div class="metal front"><svg class="mark"><use href="#mark"/></svg><span class="chip-gold"></span><i class="ph ph-contactless-payment nfc"></i><span class="holder">SAM RIVERA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ============ How it works for teams ============ -->
+  <section class="flow" id="how" aria-label="How Stressie works for teams">
+    <div class="flow-pin">
+      <div class="wrap">
+        <div class="flow-grid">
+          <div class="flow-text">
+            <p class="eyebrow"><i class="ph ph-hand-tap" aria-hidden="true"></i>How it works</p>
+            <h2 class="h2">Up and running in three steps.</h2>
+            <div class="fs-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><span class="fs-count">Step 1 of 3</span></div>
+            <div class="fs-wrap"><span class="fs-rail" aria-hidden="true"><i></i></span><ol class="fs-list">
+              <li class="fs is-on"><button type="button" class="fs-head"><span class="fs-n"><b>1</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">Give everyone a way in.</span></button>
+                <div class="fs-body"><div><p>Share one company code. Your team joins in minutes, on their own phones.</p><span class="note"><i class="ph ph-clock" aria-hidden="true"></i>Built for shift and frontline work, not desk schedules.</span></div></div></li>
+              <li class="fs"><button type="button" class="fs-head"><span class="fs-n"><b>2</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">They reset. You stay out of it.</span></button>
+                <div class="fs-body"><div><p>What people do in Stressie is private. You never see names, only how the team is doing as a whole.</p><span class="note"><i class="ph ph-lock-simple" aria-hidden="true"></i>Nothing shows until there's enough data to protect everyone.</span></div></div></li>
+              <li class="fs"><button type="button" class="fs-head"><span class="fs-n"><b>3</b><i class="ph ph-check" aria-hidden="true"></i></span><span class="fs-t">See what's weighing on the team.</span></button>
+                <div class="fs-body"><div><p>Get anonymous trends and simple next steps, like a ten-minute team Huddle.</p><span class="note"><i class="ph ph-chart-bar" aria-hidden="true"></i>Example data shown.</span></div></div></li>
+            </ol></div>
+          </div>
+          <div class="flow-stages">
+            <div class="flow-bar" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+            <div class="stage is-on" data-scene="code" role="img" aria-label="A hand types a company code and taps Join. The person is in, and their activity stays private.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app" aria-hidden="true">
+                <span class="label">Join your team</span>
+                <p class="ui-q">Enter your company code</p>
+                <p class="ui-sub">Your employer gives you one if they offer Stressie at work.</p>
+                <div class="code-field"><span class="code-text"></span><i class="caret"></i></div>
+                <button class="mini-btn code-join" type="button" tabindex="-1">Join</button>
+                <div class="code-ok off" data-show><i class="ph-fill ph-check-circle"></i>You're in. What you do in Stressie stays private.</div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
+            </div>
+            <div class="stage" data-scene="anon" role="img" aria-label="A manager's view shows 142 anonymous moments. A hand taps Show names, and Stressie explains names are never shown.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app" aria-hidden="true">
+                <div class="app-row"><div><span class="label">Team activity</span><p class="ui-sub" style="margin-top:2px">This week</p></div><span class="big">142</span></div>
+                <div class="anon">
+                  <div><i class="ph ph-user"></i><s style="width:82%"></s><em>Anonymous</em></div>
+                  <div><i class="ph ph-user"></i><s style="width:58%"></s><em>Anonymous</em></div>
+                  <div><i class="ph ph-user"></i><s style="width:90%"></s><em>Anonymous</em></div>
+                  <div><i class="ph ph-user"></i><s style="width:66%"></s><em>Anonymous</em></div>
+                </div>
+                <div style="position:relative">
+                  <button class="ghost-btn show-names" type="button" tabindex="-1"><i class="ph ph-lock-key"></i>Show names</button>
+                  <div class="anon-tip off" data-show>Names are never shown. Everyone stays anonymous.</div>
+                </div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
+            </div>
+            <div class="stage" data-scene="trends" role="img" aria-label="Bars show the team's top stressors. A hand taps Workload, then books a suggested team Huddle.">
+              <div class="pattern" data-pattern></div>
+              <div class="art"><div class="app" aria-hidden="true">
+                <span class="label">Top stressors · this week</span>
+                <div class="bars">
+                  <div class="b-work"><i style="--c:#F3683E;--h:.92"></i><span>Workload</span></div>
+                  <div><i style="--c:#C9583A;--h:.7"></i><span>Breaks</span></div>
+                  <div><i style="--c:#8F4B38;--h:.56"></i><span>Sleep</span></div>
+                  <div><i style="--c:#5E3E33;--h:.42"></i><span>Money</span></div>
+                </div>
+                <div class="tr-tip off" data-show>62% mention workload</div>
+                <div class="tr-next"><div><b>Try a team Huddle</b><span>Rest and real breaks · 10 min</span></div><button class="mini-btn tr-start" type="button" tabindex="-1">Start</button></div>
+              </div></div>
+              <div class="hand" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ Private by design ============ -->
+  <section class="sec sec-tight">
+    <div class="wrap">
+      <div class="private reveal"><i class="ph ph-lock-simple" aria-hidden="true"></i><b>Private by design.</b><span>You only see how the whole team is doing. Never a name, never anyone's activity. <a href="privacy.html">Read our privacy policy</a></span></div>
+    </div>
+  </section>
+  <!-- ============ Industries: one photo tile ============ -->
+  <section class="sec" id="industries">
+    <div class="ind-tile">
+      <div class="ind-photos" aria-hidden="true"><img class="is-on" src="img/ind-hospitality.webp" alt="" loading="eager"><img src="img/ind-healthcare.webp" alt="" loading="lazy"><img src="img/ind-logistics.webp" alt="" loading="lazy"><img src="img/ind-manufacturing.webp" alt="" loading="lazy"></div>
+      <div class="ind-shade" aria-hidden="true"></div>
+      <div class="ind-top">
+        <p class="eyebrow" style="color:#fff"><i class="ph ph-buildings" aria-hidden="true"></i>Industries</p>
+        <h2 class="h2">Built for the teams that keep things running.</h2>
+        <p class="lead">Pick your industry to see how Stressie fits your team's day.</p>
+        
+      </div>
+      <div class="ind-bottom">
+        <div class="ind-tabs" role="tablist" aria-label="Industries"><span class="ind-thumb" aria-hidden="true"></span><button type="button" role="tab" id="ind-tab-0" aria-controls="ind-0" aria-selected="true">Hospitality</button><button type="button" role="tab" id="ind-tab-1" aria-controls="ind-1" aria-selected="false" tabindex="-1">Healthcare</button><button type="button" role="tab" id="ind-tab-2" aria-controls="ind-2" aria-selected="false" tabindex="-1">Logistics</button><button type="button" role="tab" id="ind-tab-3" aria-controls="ind-3" aria-selected="false" tabindex="-1">Manufacturing</button></div>
+        <div class="ind-panels">
+            <div class="ind-panel" id="ind-0" role="tabpanel" aria-labelledby="ind-tab-0">
+              <h3>Hospitality</h3>
+              <p>Hotel and restaurant teams work long, uneven shifts on their feet. Stressie gives them a reset they can do on a break, and perks close to where they work.</p>
+              <a class="link" href="contact.html#hospitality">Talk to us about Hospitality<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="ind-panel is-off" id="ind-1" role="tabpanel" aria-labelledby="ind-tab-1">
+              <h3>Healthcare</h3>
+              <p>Nurses, aides and support staff carry other people's stress all day. Stressie gives them a private way to reset, and two-minute moments between rounds.</p>
+              <a class="link" href="contact.html#healthcare">Talk to us about Healthcare<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="ind-panel is-off" id="ind-2" role="tabpanel" aria-labelledby="ind-tab-2">
+              <h3>Logistics</h3>
+              <p>Warehouse and delivery teams move fast, often through the night. Stressie fits into the shift, with moments that work standing up and no desk needed.</p>
+              <a class="link" href="contact.html#logistics">Talk to us about Logistics<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="ind-panel is-off" id="ind-3" role="tabpanel" aria-labelledby="ind-tab-3">
+              <h3>Manufacturing</h3>
+              <p>Line work is physical and repetitive. Stressie offers short stretch and breathing moments for breaks, and anonymous insight into what's wearing the team down.</p>
+              <a class="link" href="contact.html#manufacturing">Talk to us about Manufacturing<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Proof: built in the field ============ -->
+  <section class="sec" id="proof" aria-labelledby="proof-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><i class="ph ph-quotes" aria-hidden="true"></i>Built in the field</p>
+        <h2 class="h2" id="proof-title">In their <em>words</em>.</h2>
+        <p class="lead">Shaped in a six-month pilot at Ember Kitchen in Austin, with managers and frontline staff.</p>
+      </div>
       <div class="words-lead">
         <figure class="voice reveal">
-          <blockquote>
-            <p><span class="hang">“</span>It’s no longer just about how the staff feels, it’s about building a sustainable, high-output culture that can handle the rush <em>without the burnout.</em>”</p>
-          </blockquote>
-          <figcaption>
-            <img class="face" src="img/face-jon.webp" alt="" width="56" height="56" loading="lazy">
-            <span><b>Jon De Wolff</b><small>Co-founder, inKind</small></span>
-          </figcaption>
+          <blockquote><p><span class="hang">“</span>It’s no longer just about how the staff feels, it’s about building a sustainable, high-output culture that can handle the rush <em>without the burnout.</em>”</p></blockquote>
+          <figcaption><img class="face" src="img/face-jon.webp" alt="" width="56" height="56" loading="lazy"><span><b>Jon De Wolff</b>Co-founder, inKind</span></figcaption>
         </figure>
-
         <article class="pilot reveal" aria-label="Ember Kitchen pilot results">
-          <div class="pilot-photo">
-            <img src="img/ember-pilot.webp" alt="The Ember Kitchen sign inside the restaurant" loading="lazy">
-            <span class="glass-tag">Ember Kitchen · Austin, TX</span>
-          </div>
+          <div class="pilot-photo"><img src="img/ember-pilot.webp" alt="The Ember Kitchen sign inside the restaurant" loading="lazy"><span class="glass-tag">Ember Kitchen · Austin, TX</span></div>
           <dl class="pilot-stats">
             <div><dt>Stress reduced</dt><dd>22%</dd></div>
             <div><dt>Felt more supported</dt><dd>35%</dd></div>
@@ -347,63 +453,66 @@
           </dl>
         </article>
       </div>
-
       <figure class="story reveal">
-        <div class="story-photo">
-          <img src="img/face-lorena.webp" alt="" loading="lazy">
-          <span class="glass-tag">Fluence Energy</span>
-        </div>
-        <blockquote>
-          <p>“Stressie equipped our team with on-the-go tools to stay healthy, reframe stress, and <em>prevent burnout.</em>”</p>
-        </blockquote>
-        <figcaption><b>Lorena Alvarez</b><small>Logistics Operations, Fluence</small></figcaption>
+        <div class="story-photo"><img src="img/face-lorena.webp" alt="" loading="lazy"><span class="glass-tag">Fluence Energy</span></div>
+        <blockquote><p>“Stressie equipped our team with on-the-go tools to stay healthy, reframe stress, and <em>prevent burnout.</em>”</p></blockquote>
+        <figcaption><b>Lorena Alvarez</b>Logistics Operations, Fluence</figcaption>
       </figure>
-
-      <p class="words-invite reveal">Using Stressie on shift? <a href="mailto:info@stressieapp.com">Tell us how it fits your day <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-      <div class="vendor reveal" id="vendors">
-        <div><h2>Run a wellness business?</h2><p class="italic">Founding Partner spots are open.</p></div>
-        <a class="btn btn-orange" href="contact.html#partner">Join as a vendor <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
     </div>
   </section>
 
-</main>
+  <section class="sec">
+    <div class="wrap">
+      <a class="xlink reveal" href="partners.html"><i class="ph ph-storefront" aria-hidden="true"></i><span><b>Run a wellness business?</b>See Stressie for wellness partners.</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
 
-<footer class="site-foot" id="get">
-  <div class="foot-card">
-    <div class="foot-glow" aria-hidden="true"></div>
-    <div class="foot-cta">
-      <h2 class="display">Small resets create a calmer <em>tomorrow</em>.</h2>
-      <div class="foot-cta-side">
-        <p>Start with one check-in. It takes ten seconds.</p>
-        <div class="badges">
-          <a class="badge" href="https://apps.apple.com/us/app/stressieapp/id6737459302"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
-          <a class="badge" href="https://play.google.com/store/apps/details?id=com.stressiefrontend.app"><svg aria-hidden="true"><use href="#i-gplay"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+  <section class="sec" id="get">
+    <div class="wrap">
+      <div class="get reveal">
+        <div class="pattern" data-pattern data-po=".55"></div>
+        <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
+        <h2 class="h2">Bring Stressie to your team.</h2>
+        <p>We reply within 24 hours. Or download the app and try it yourself first.</p>
+        <div class="biz-row" style="justify-content:center">
+          <a class="btn btn-light" href="contact.html">Book a demo<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn btn-dark" href="mailto:info@stressieapp.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i>info@stressieapp.com</a>
         </div>
+        <a class="link get-alt" href="get.html">Invited by your employer? Get the app<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
+  </section>
+</main>
 
+<footer class="site-foot">
+  <div class="foot-card">
+    <div class="pattern" data-pattern data-ps="20" data-gap="56" data-po=".05"></div>
     <div class="foot-grid">
       <div class="foot-brand">
-        <span class="wordmark" role="img" aria-label="Stressie"></span>
+        <a class="brand" href="index.html" aria-label="Stressie home"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg>Stressie</a>
         <p>Helping busy people manage stress, better. At work, off work, and everything in between.</p>
         <div class="socials">
-          <a href="https://www.instagram.com/stressieapp/" aria-label="Stressie on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://www.linkedin.com/company/stressieapp/" aria-label="Stressie on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 8.6h3.1V19H5.2zM6.7 4a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6zM10.3 8.6h3v1.4h.1c.4-.8 1.5-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V19h-3.1v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V19h-3.1z"/></svg></a>
-          <a href="mailto:info@stressieapp.com" aria-label="Email Stressie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></a>
+          <a href="https://www.instagram.com/stressieapp/" aria-label="Stressie on Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/stressieapp/" aria-label="Stressie on LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+          <a href="mailto:info@stressieapp.com" aria-label="Email Stressie"><i class="ph ph-envelope-simple" aria-hidden="true"></i></a>
         </div>
       </div>
       <nav class="foot-col" aria-label="Stressie">
         <h4>Stressie</h4>
-        <a href="#ways" data-mode="you">For yourself</a>
-        <a href="#ways" data-mode="teams">For teams</a>
-        <a href="#industries">Industries</a>
-        <a href="#get">Download the app</a>
+        <a href="index.html#app">Your team's app</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#proof">Results</a>
+      </nav>
+      <nav class="foot-col" aria-label="Get started">
+        <h4>Get started</h4>
+        <a href="contact.html">Book a demo</a>
+        <a href="partners.html">For partners</a>
+        <a href="get.html">Get the app</a>
       </nav>
       <nav class="foot-col" aria-label="Company">
         <h4>Company</h4>
         <a href="manifesto.html">Manifesto</a>
-        <a href="#vendors">Partners</a>
         <a href="contact.html">Contact</a>
       </nav>
       <nav class="foot-col" aria-label="Legal">
@@ -412,16 +521,16 @@
         <a href="terms.html">Terms</a>
       </nav>
     </div>
-
     <div class="foot-base">
       <p>Stressie isn't a medical device or a substitute for professional care. In a crisis, call or text <a href="tel:988">988</a> in the US.</p>
       <p>© 2026 Stressie Inc. · Map data © OpenStreetMap · <button type="button" class="motion-toggle" aria-pressed="false">Pause animations</button></p>
     </div>
-    <div class="foot-giant" aria-hidden="true"></div>
+    <span class="foot-word" aria-hidden="true">Stressie</span>
   </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js" defer></script>
-<script src="story.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>
