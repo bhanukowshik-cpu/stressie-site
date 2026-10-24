@@ -1084,3 +1084,6 @@ body {
 .map { background: #1B1712; }
 .map-veil { background: linear-gradient(180deg, rgba(22, 19, 15, .5) 0%, rgba(22, 19, 15, .08) 16%, rgba(22, 19, 15, .08) 44%, rgba(22, 19, 15, .88) 66%, transparent 86%),
                        radial-gradient(90% 70% at 50% 36%, transparent 45%, rgba(22, 19, 15, .6) 100%); }
+
+/* Footer wordmark: centred */
+.foot-word { text-align: center; }
