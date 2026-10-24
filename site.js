@@ -21,11 +21,13 @@
   (function heroMap() {
     const el = $('#map');
     if (!el || !window.maplibregl) return;
-    const C = {
-      land: '#201F1B', residential: '#22211D', park: '#232A21', wood: '#222820', water: '#192427',
-      minor: '#2D2B27', majorCasing: '#2A2824', major: '#393632', motorCasing: '#3B2A22', motor: '#4B3327',
+    const PALETTES = {
+      dark: { land: '#201F1B', residential: '#22211D', park: '#232A21', wood: '#222820', water: '#192427',
+              minor: '#2D2B27', majorCasing: '#2A2824', major: '#393632', motorCasing: '#3B2A22', motor: '#4B3327' },
+      light: { land: '#EFEBE6', residential: '#ECE7E1', park: '#E2E7D9', wood: '#DDE4D3', water: '#D4DFE4',
+               minor: '#FFFFFF', majorCasing: '#E2DCD5', major: '#FFFFFF', motorCasing: '#F2CDB9', motor: '#FADFD0' },
     };
-    const paint = {
+    const paintFor = C => ({
       background: { 'background-color': C.land },
       park: { 'fill-color': C.park, 'fill-opacity': 1 },
       water: { 'fill-color': C.water },
@@ -43,7 +45,9 @@
       highway_motorway_subtle: { 'line-color': C.motorCasing },
       highway_motorway_bridge_casing: { 'line-color': C.motorCasing },
       highway_motorway_bridge_inner: { 'line-color': C.motor },
-    };
+    });
+    const theme = () => (root.dataset.theme === 'light' ? 'light' : 'dark');
+    const paint = paintFor(PALETTES[theme()]);
     fetch('https://tiles.openfreemap.org/styles/positron')
       .then(r => r.json())
       .then(style => {
@@ -56,6 +60,10 @@
           attributionControl: { compact: true, customAttribution: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>' },
         });
         map.once('idle', () => el.classList.add('is-ready'));
+        window.addEventListener('stressie-theme', () => {
+          const next = paintFor(PALETTES[theme()]);
+          Object.entries(next).forEach(([id, props]) => { if (map.getLayer(id)) Object.entries(props).forEach(([k, v]) => map.setPaintProperty(id, k, v)); });
+        });
       })
       .catch(() => {});
   })();
@@ -588,6 +596,16 @@
     if (/Android/i.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.stressiefrontend.app');
     else if (ios) location.replace('https://apps.apple.com/us/app/stressieapp/id6737459302');
   }
+
+  /* ---------- Dark or light: dark is the default, the choice is remembered ---------- */
+  $$('.theme-btn').forEach(btn => btn.addEventListener('click', () => {
+    const light = root.dataset.theme !== 'light';
+    if (light) root.dataset.theme = 'light'; else delete root.dataset.theme;
+    try { localStorage.setItem('stressie-theme', light ? 'light' : 'dark'); } catch (e) {}
+    const meta = $('meta[name="theme-color"]');
+    if (meta) meta.content = light ? '#FBF9F6' : '#1C1B17';
+    window.dispatchEvent(new Event('stressie-theme'));
+  }));
 
   /* ---------- Pause animations (WCAG 2.2.2) ---------- */
   const mt = $('.motion-toggle');
