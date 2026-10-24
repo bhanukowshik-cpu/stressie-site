@@ -1091,12 +1091,6 @@ body {
 /* One width for every section */
 .note-card { max-width: none; }
 
-/* A calmer header: logo, the For companies | For partners switch, one button */
-.nav-links { display: none !important; }
-.aud { margin-left: auto; margin-right: auto; }
-.nav .btn { margin-left: 0 !important; }
-@media (min-width: 760px) { .burger { display: none !important; } nav.sheet { display: none !important; } }
-@media (max-width: 759px) { .nav .btn { margin-left: auto !important; } }
 
 /* No map credit on the map itself (it stays in the footer) */
 .maplibregl-ctrl-bottom-right, .maplibregl-ctrl-attrib { display: none !important; }
@@ -1118,3 +1112,6 @@ body {
 .maplibregl-control-container { display: none !important; }
 
 @media (min-width: 900px) { .of-0 { top: 23%; } .of-1 { top: 20%; } }
+
+/* Footer: just the crisis note, centred */
+.foot-base { justify-content: center; text-align: center; }
