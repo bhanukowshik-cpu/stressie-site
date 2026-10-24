@@ -1087,3 +1087,34 @@ body {
 
 /* Footer wordmark: centred */
 .foot-word { text-align: center; }
+
+/* One width for every section */
+.note-card { max-width: none; }
+
+/* A calmer header: logo, the For companies | For partners switch, one button */
+.nav-links { display: none !important; }
+.aud { margin-left: auto; margin-right: auto; }
+.nav .btn { margin-left: 0 !important; }
+@media (min-width: 760px) { .burger { display: none !important; } nav.sheet { display: none !important; } }
+@media (max-width: 759px) { .nav .btn { margin-left: auto !important; } }
+
+/* No map credit on the map itself (it stays in the footer) */
+.maplibregl-ctrl-bottom-right, .maplibregl-ctrl-attrib { display: none !important; }
+
+/* Desktop: the places spread across the whole hero, around the headline */
+@media (min-width: 900px) { .hero .spots { position: absolute; inset: var(--nav) 0 0 0; } }
+
+/* Desktop hero: the headline sits in the middle, places ring around it */
+@media (min-width: 900px) {
+  .hero { grid-template-rows: 1fr; align-items: center; min-height: max(780px, calc(100svh - var(--nav))); max-height: none; }
+  .hero-copy { padding-top: 40px; padding-bottom: 40px; }
+  .of-0 { left: 3%; top: 32%; }
+  .of-1 { left: auto; right: 3%; top: 26%; }
+  .map-veil { background: radial-gradient(ellipse 42% 38% at 50% 54%, rgba(22, 19, 15, .9) 0%, rgba(22, 19, 15, .6) 55%, transparent 100%),
+                         linear-gradient(180deg, rgba(22, 19, 15, .35) 0%, transparent 20%, transparent 80%, var(--bg) 100%); }
+}
+@media (min-width: 900px) and (max-width: 1299px) { .offer { display: none; } }
+
+.maplibregl-control-container { display: none !important; }
+
+@media (min-width: 900px) { .of-0 { top: 23%; } .of-1 { top: 20%; } }
