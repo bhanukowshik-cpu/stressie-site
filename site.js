@@ -617,7 +617,7 @@
   /* ---------- Waitlist form: sends to FormSubmit, falls back to the visitor's own email ---------- */
   (function waitlist() {
     // Where sign-ups go. FormSubmit emails each one to this address.
-    const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/kowshikbhanu1000@gmail.com'; // test inbox; switch back to info@stressieapp.com
+    const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/info@stressieapp.com';
     const wl = $('#waitlist-form');
     if (!wl) return;
     const done = $('#waitlist-done'), fail = $('#wl-fail'), send = $('#wl-send');
