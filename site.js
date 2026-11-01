@@ -614,10 +614,11 @@
     addEventListener('scroll', spy, { passive: true });
   }
 
-  /* ---------- Waitlist form: sends to FormSubmit, falls back to the visitor's own email ---------- */
+  /* ---------- Waitlist form: sends to the Google Sheet, falls back to the visitor's own email ---------- */
   (function waitlist() {
-    // Where sign-ups go. FormSubmit emails each one to this address.
-    const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/info@stressieapp.com';
+    // Where sign-ups go: the sheet's Apps Script web app (tools/waitlist-sheet.gs).
+    // It adds a row to the Waitlist tab and emails info@stressieapp.com.
+    const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwTUyTBRnqA-F2fSBmwH_zDF6qI9XNoMWdAMqZsGiq9xei3Da9YuTUrin7n6am00Nkl/exec';
     const wl = $('#waitlist-form');
     if (!wl) return;
     const done = $('#waitlist-done'), fail = $('#wl-fail'), send = $('#wl-send');
@@ -660,7 +661,7 @@
         ? { company: 'Company', company_role: 'Role at the company', why: 'Why Stressie for the team', email: 'Email' }
         : { name: 'Name', role: 'What they do', email: 'Email', phone: 'Phone' };
       const subject = `Stressie waitlist: ${type === 'team' ? 'team' : 'individual'}`;
-      const payload = { _subject: subject, _template: 'table', _captcha: 'false', _honey: data.get('_honey') || '', type };
+      const payload = { _honey: data.get('_honey') || '', type };
       const lines = [];
       Object.keys(labels).forEach(k => {
         const v = String(data.get(k) || '').trim();
@@ -675,11 +676,8 @@
       send.setAttribute('aria-busy', 'true');
       send.textContent = 'Sending…';
       try {
-        const res = await fetch(WAITLIST_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload),
-        });
+        // A form-encoded body keeps this a simple request, which Apps Script accepts cross-origin
+        const res = await fetch(WAITLIST_ENDPOINT, { method: 'POST', body: new URLSearchParams(payload) });
         const json = await res.json().catch(() => ({}));
         if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || `HTTP ${res.status}`);
         wl.hidden = true;
