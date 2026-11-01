@@ -387,7 +387,11 @@ button { font: inherit; color: inherit; }
 .dur { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .dur i { font-size: 20px; color: #fff; }
 .sleep-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-.sleep-chips .chip:first-child { background: var(--text); color: var(--bg); }
+.sleep-chips .chip { border: 0; cursor: pointer; min-height: 40px; transition: background .2s, color .2s; }
+.sleep-chips .chip:hover { color: var(--text); }
+.sleep-chips .chip[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.sleep-grid [hidden] { display: none; }
+.sleep-grid:has(> .sleep-card[hidden]) { grid-template-columns: 1fr; }
 
 /* ---------- Wallet and rewards ---------- */
 .wallet-grid { display: grid; gap: clamp(36px, 5vw, 80px); align-items: center; }

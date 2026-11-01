@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=202611010900">
+<link rel="stylesheet" href="site.css?v=202611010945">
 </head>
 <body class="page-home">
 
@@ -250,12 +250,12 @@
         <h2 class="h2">Sleep, whenever the night starts.</h2>
         <p class="lead">Bedtime stories, meditations and sounds for after any shift, even when the night begins at 9 am.</p>
       </div>
-      <div class="sleep-chips reveal" aria-hidden="true"><span class="chip">All</span><span class="chip">Stories</span><span class="chip">Meditations</span><span class="chip">Sounds</span><span class="chip">Music</span></div>
+      <div class="sleep-chips reveal" role="group" aria-label="Show"><button type="button" class="chip" aria-pressed="true" data-kind="all">All</button><button type="button" class="chip" aria-pressed="false" data-kind="story">Stories</button><button type="button" class="chip" aria-pressed="false" data-kind="meditation">Meditations</button><button type="button" class="chip" aria-pressed="false" data-kind="sound">Sounds</button></div>
       <div class="sleep-grid reveal">
-        <div class="sleep-card"><div class="art-img"><img src="img/sleep-rain.webp" alt="Painting of rain on a cottage window, with a lamp and a mug on the sill" loading="lazy"><span><i class="ph-fill ph-cloud-rain" aria-hidden="true"></i>Sound</span></div><div><b>Rain at the window</b><small>Soft rain</small></div></div>
+        <div class="sleep-card" data-kind="sound"><div class="art-img"><img src="img/sleep-rain.webp" alt="Painting of rain on a cottage window, with a lamp and a mug on the sill" loading="lazy"><span><i class="ph-fill ph-cloud-rain" aria-hidden="true"></i>Sound</span></div><div><b>Rain at the window</b><small>Soft rain</small></div></div>
         <div class="sleep-list">
-          <div class="sleep-row"><img src="img/sleep-boat.webp" alt="" loading="lazy"><div><b>The Last Boat</b><small>Bedtime story · A quiet homecoming</small></div><span class="dur">1:23<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
-          <div class="sleep-row"><img src="img/sleep-settle.webp" alt="" loading="lazy"><div><b>Let the day settle</b><small>Meditation · A gentle guided pause</small></div><span class="dur">1:06<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
+          <div class="sleep-row" data-kind="story"><img src="img/sleep-boat.webp" alt="" loading="lazy"><div><b>The Last Boat</b><small>Bedtime story · A quiet homecoming</small></div><span class="dur">1:23<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
+          <div class="sleep-row" data-kind="meditation"><img src="img/sleep-settle.webp" alt="" loading="lazy"><div><b>Let the day settle</b><small>Meditation · A gentle guided pause</small></div><span class="dur">1:06<i class="ph-fill ph-play" aria-hidden="true"></i></span></div>
           <div class="sleep-row"><i class="ph ph-moon-stars" aria-hidden="true"></i><div><b>Made for day sleepers</b><small>Off a night shift? Press play at 9 am. It works the same.</small></div></div>
         </div>
       </div>
@@ -534,6 +534,6 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js" defer></script>
-<script src="site.js?v=202611010930" defer></script>
+<script src="site.js?v=202611010945" defer></script>
 </body>
 </html>

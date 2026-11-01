@@ -507,6 +507,17 @@
     if (document.fonts) document.fonts.ready.then(sync);
   })();
 
+  /* ---------- Sleep: the chips filter the stories, meditations and sounds ---------- */
+  (function sleepFilter() {
+    const bar = $('.sleep-chips');
+    if (!bar) return;
+    const chips = $$('button', bar), items = $$('.sleep-grid [data-kind]');
+    chips.forEach(c => c.addEventListener('click', () => {
+      chips.forEach(o => o.setAttribute('aria-pressed', String(o === c)));
+      items.forEach(it => { it.hidden = c.dataset.kind !== 'all' && it.dataset.kind !== c.dataset.kind; });
+    }));
+  })();
+
   /* ---------- Nav: scrolled state, the For business menu, the phone sheet ---------- */
   const nav = $('#nav');
   if (nav) {
