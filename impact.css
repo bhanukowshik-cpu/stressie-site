@@ -32,7 +32,6 @@
 .imp-list b { font-weight: 600; color: var(--text); }
 
 /* Privacy and partner */
-.imp-partner > i { color: var(--accent); }
 
 /* CTA and the small print */
 .page-impact .get .biz-row { justify-content: center; }
@@ -41,6 +40,4 @@
 /* Phones: buttons stack full width and may wrap */
 @media (max-width: 480px) {
   .imp-hero .hero-ctas .btn, .page-impact .get .btn { width: 100%; white-space: normal; text-align: center; }
-  .private { grid-template-columns: 1fr; padding: 22px; }
-  .private > i { grid-row: auto; }
 }
