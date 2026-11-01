@@ -386,7 +386,7 @@
     const span = () => flowEl.offsetHeight - (innerHeight - navH());
     let pinInView = false;
     const items = $$('.fs', flowEl), stages = $$('.stage', flowEl), dots = $$('.fs-dots i', flowEl);
-    const rail = $('.fs-rail i', flowEl), segs = $$('.flow-bar i', flowEl), count = $('.fs-count', flowEl);
+    const rail = $('.fs-rail i', flowEl), count = $('.fs-count', flowEl);
     const railBox = $('.fs-rail', flowEl), nums = $$('.fs-n', flowEl);
     const placeRail = () => {
       if (!railBox || nums.length < 2) return;
@@ -419,7 +419,6 @@
     const update = () => {
       const p = progress(), n = items.length;
       if (rail) rail.style.transform = `scaleY(${(Math.min(p * n, n - 1) / (n - 1)).toFixed(4)})`;
-      segs.forEach((seg, k) => { seg.style.transform = `scaleX(${clamp(p * n - k, 0, 1).toFixed(4)})`; });
       activate(Math.floor(p * n));
     };
     const refresh = () => { players.forEach(pl => pl.stop()); activate(idx, true); };
@@ -550,36 +549,16 @@
       el.classList.add('in');
       // Hand the element back to its own styles once it has arrived
       const delay = 1400 + (Number(el.style.getPropertyValue('--i')) || 0) * 90;
-      setTimeout(() => { el.classList.remove('anim', 'in', 'big'); el.style.removeProperty('--i'); }, delay);
+      setTimeout(() => { el.classList.remove('anim', 'in', 'anim-big'); el.style.removeProperty('--i'); }, delay);
     }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
     els.forEach(el => {
       const sibs = [...el.parentElement.children].filter(c => set.has(c));
       el.style.setProperty('--i', String(Math.min(sibs.indexOf(el), 6)));
       el.classList.add('anim');
-      if (BIG.some(c => el.classList.contains(c)) || el.matches('.biz > *, .ways > *, .sleep-card')) el.classList.add('big');
+      if (BIG.some(c => el.classList.contains(c)) || el.matches('.biz > *, .ways > *, .sleep-card')) el.classList.add('anim-big');
       io.observe(el);
     });
   }
-
-  /* ---------- The QR code: points to get.html, which opens the right app store ---------- */
-  (function qr() {
-    const boxes = $$('[data-qr] .qr-box');
-    if (!boxes.length) return;
-    const url = new URL('get.html', location.href).href;
-    const draw = () => {
-      if (!window.qrcode) return false;
-      const q = qrcode(0, 'H');
-      q.addData(url);
-      q.make();
-      const n = q.getModuleCount();
-      let cells = '';
-      for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) cells += `<rect x="${c}" y="${r}" width="1.04" height="1.04"/>`;
-      const svg = `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" role="img" aria-label="QR code to download Stressie"><g fill="#1C1B17">${cells}</g></svg><svg class="mark" aria-hidden="true"><use href="#mark"/></svg>`;
-      boxes.forEach(b => { b.innerHTML = svg; });
-      return true;
-    };
-    if (!draw()) addEventListener('load', () => { if (!draw()) boxes.forEach(b => { b.closest('[data-qr]').hidden = true; }); });
-  })();
 
   /* ---------- Copy a link (Ways in: send your manager the companies page) ---------- */
   $$('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
@@ -588,14 +567,6 @@
     const fallback = () => { btn.textContent = link; };
     try { navigator.clipboard.writeText(link).then(done, fallback); } catch (err) { fallback(); }
   }));
-
-  /* ---------- get.html: open the right store ---------- */
-  if (document.body.classList.contains('page-get')) {
-    const ua = navigator.userAgent;
-    const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (/Android/i.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.stressiefrontend.app');
-    else if (ios) location.replace('https://apps.apple.com/us/app/stressieapp/id6737459302');
-  }
 
   /* ---------- Dark or light: dark is the default, the choice is remembered ---------- */
   $$('.theme-btn').forEach(btn => btn.addEventListener('click', () => {
@@ -632,6 +603,88 @@
     addEventListener('scroll', spy, { passive: true });
   }
 
+  /* ---------- Waitlist form: sends to FormSubmit, falls back to the visitor's own email ---------- */
+  (function waitlist() {
+    // Where sign-ups go. FormSubmit emails each one to this address.
+    const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/info@stressieapp.com';
+    const wl = $('#waitlist-form');
+    if (!wl) return;
+    const done = $('#waitlist-done'), fail = $('#wl-fail'), send = $('#wl-send');
+    const groups = $$('[data-for]', wl);
+    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const bad = f => (f.required && !f.value.trim()) || (f.type === 'email' && f.value.trim() && !isEmail(f.value.trim()));
+    const showErr = (f, on) => {
+      const err = document.getElementById(f.getAttribute('aria-describedby'));
+      if (on) f.setAttribute('aria-invalid', 'true'); else f.removeAttribute('aria-invalid');
+      if (err) err.hidden = !on;
+    };
+    // Only the visible mode's fields count: hidden ones are disabled, so they skip checks and FormData
+    const setMode = mode => groups.forEach(g => {
+      g.hidden = g.dataset.for !== mode;
+      $$('input, textarea', g).forEach(f => { f.disabled = g.hidden; if (g.hidden) showErr(f, false); });
+    });
+    wl.addEventListener('change', e => { if (e.target.name === 'type') { setMode(e.target.value); fail.hidden = true; } });
+    // waitlist.html#team opens on the team form, also when the hash changes on this page
+    const fromHash = () => {
+      const token = location.hash.slice(1).toLowerCase();
+      const r = token && wl.querySelector(`input[name="type"][value="${CSS.escape(token)}"]`);
+      if (r) r.checked = true;
+      setMode(wl.querySelector('input[name="type"]:checked').value);
+    };
+    fromHash();
+    addEventListener('hashchange', fromHash);
+
+    wl.addEventListener('input', e => { const f = e.target; if (f.getAttribute('aria-invalid') === 'true' && !bad(f)) showErr(f, false); });
+
+    wl.addEventListener('submit', async e => {
+      e.preventDefault();
+      fail.hidden = true;
+      const fields = $$('input[aria-describedby], textarea[aria-describedby]', wl).filter(f => !f.disabled);
+      const wrong = fields.filter(bad);
+      fields.forEach(f => showErr(f, wrong.includes(f)));
+      if (wrong.length) { wrong[0].focus(); return; }
+
+      const data = new FormData(wl), type = data.get('type');
+      const labels = type === 'team'
+        ? { company: 'Company', company_role: 'Role at the company', why: 'Why Stressie for the team', email: 'Email' }
+        : { name: 'Name', role: 'What they do', email: 'Email', phone: 'Phone' };
+      const subject = `Stressie waitlist: ${type === 'team' ? 'team' : 'individual'}`;
+      const payload = { _subject: subject, _template: 'table', _captcha: 'false', _honey: data.get('_honey') || '', type };
+      const lines = [];
+      Object.keys(labels).forEach(k => {
+        const v = String(data.get(k) || '').trim();
+        payload[k] = v;
+        if (v) lines.push(`${labels[k]}: ${v}`);
+      });
+      // If sending fails, the same answers go into an email the visitor sends themselves
+      $('#wl-mail').href = `mailto:info@stressieapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+
+      const label = send.innerHTML;
+      send.disabled = true;
+      send.setAttribute('aria-busy', 'true');
+      send.textContent = 'Sending…';
+      try {
+        const res = await fetch(WAITLIST_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || `HTTP ${res.status}`);
+        wl.hidden = true;
+        done.hidden = false;
+        $('h2', done).focus();
+      } catch (err) {
+        fail.hidden = false;
+        fail.focus();
+      } finally {
+        send.disabled = false;
+        send.removeAttribute('aria-busy');
+        send.innerHTML = label;
+      }
+    });
+  })();
+
   /* ---------- Contact form ---------- */
   const form = $('#contact-form');
   if (!form) return;
@@ -666,9 +719,12 @@
     } else if (t === 'partner') {
       add('Business', data.get('business'));
       add('What they offer', data.get('offer'));
+    } else if (t === 'impact') {
+      add('Name or organization', data.get('org'));
+      add('Who they want to support', data.get('who'));
     }
     add('Message', data.get('message'));
-    const subject = { team: 'Stressie for my team', partner: 'Joining Stressie as a wellness partner', other: 'Hello from the Stressie website' }[t];
+    const subject = { team: 'Stressie for my team', partner: 'Joining Stressie as a wellness partner', impact: 'Sponsoring care through Stressie', other: 'Hello from the Stressie website' }[t];
     const body = lines.join('\n');
     $('#cf-preview').textContent = `Subject: ${subject}\n\n${body}`;
     $('#cf-open').href = `mailto:info@stressieapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

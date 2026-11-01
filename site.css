@@ -733,9 +733,6 @@ button { font: inherit; color: inherit; }
 .flow-cta { margin-left: 52px; }
 .fs-count { margin-left: 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
 /* A three-part bar over the close-up: done, now, next */
-.flow-bar { position: absolute; z-index: 12; left: 22px; right: 22px; top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; pointer-events: none; }
-.flow-bar span { height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .3); overflow: hidden; }
-.flow-bar i { display: block; height: 100%; background: #fff; transform-origin: left; transform: scaleX(0); }
 @media (max-width: 899px) {
   .fs-rail { display: none; }
   .fs-body > div { padding-left: 0; }
@@ -830,7 +827,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Entrance animations: each block rises in as it comes into view ---------- */
 .anim { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .8s var(--ease-out), transform 1s var(--ease-out), filter .8s var(--ease-out); transition-delay: calc(var(--i, 0) * 90ms); }
-.anim.big { filter: none; transform: translateY(36px) scale(.97); }
+.anim.anim-big { filter: none; transform: translateY(36px) scale(.97); }
 .anim.in { opacity: 1; transform: none; filter: none; }
 
 .sw-head b { text-wrap: balance; }
@@ -924,8 +921,6 @@ html[data-theme="light"] .of-tag { color: #fff; }
 html[data-theme="light"] .h1 em, html[data-theme="light"] .h2 em { color: var(--accent-hi); }
 html[data-theme="light"] .stage .pattern i, html[data-theme="light"] .wrist .pattern i, html[data-theme="light"] .get .pattern i, html[data-theme="light"] .partner-demo .pattern i, html[data-theme="light"] .gt-vis .pattern i { color: rgba(226, 104, 50, .3); }
 html[data-theme="light"] .app { box-shadow: 0 34px 70px -34px rgba(150, 60, 10, .35); }
-html[data-theme="light"] .flow-bar span { background: rgba(28, 27, 23, .12); }
-html[data-theme="light"] .flow-bar i { background: var(--accent-hi); }
 html[data-theme="light"] .fs.is-done .fs-n, html[data-theme="light"] .fs-rail i, html[data-theme="light"] .time[aria-selected="true"] i { background: var(--accent-hi); }
 html[data-theme="light"] .wrist > p { color: var(--text-2); }
 html[data-theme="light"] .get .h2 { color: var(--text); }
@@ -984,7 +979,6 @@ html[data-theme="light"] .stage, html[data-theme="light"] .wrist, html[data-them
   --text: #FFFFFF; --text-2: #E8E5DF; --muted: #A7A29A; --faint: #78736B; --line: rgba(255, 255, 255, .08);
   --accent: #F3683E; --accent-hi: #F3683E; color: var(--text); }
 html[data-theme="light"] .stage .pattern i, html[data-theme="light"] .wrist .pattern i, html[data-theme="light"] .get .pattern i, html[data-theme="light"] .partner-demo .pattern i, html[data-theme="light"] .gt-vis .pattern i { color: rgba(243, 104, 62, .22); }
-html[data-theme="light"] .flow-bar span { background: rgba(255, 255, 255, .2); }
 html[data-theme="light"] .wrist > p, html[data-theme="light"] .get p { color: rgba(255, 255, 255, .85); }
 html[data-theme="light"] .get .h2, html[data-theme="light"] .get .qr-card b, html[data-theme="light"] .get-alt { color: #fff; }
 html[data-theme="light"] .get .qr-card { background: rgba(255, 255, 255, .08); }
@@ -1057,14 +1051,13 @@ body {
 .h1 em, .h2 em, .stanza em { color: var(--accent); background: linear-gradient(90deg, #FBB15E, #F78521 60%, #F26A2A); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .pin-dot { background: linear-gradient(135deg, var(--orange-a), var(--orange-b)); }
 .fs.is-done .fs-n, .time[aria-selected="true"] i, .breath-steps span.on { background: linear-gradient(135deg, var(--orange-a), var(--orange-b)); }
-.fs-rail i, .flow-bar i { background: linear-gradient(180deg, #FBB15E, var(--orange-a)); }
+.fs-rail i { background: linear-gradient(180deg, #FBB15E, var(--orange-a)); }
 .dial .done { stroke: var(--orange-a); }
 .pilot-stats dd { color: var(--accent); }
 
 /* Panels: glowing orange, icons faint */
 .stage, .wrist, .get, .partner-demo, .gt-vis { background: var(--panel); box-shadow: var(--glass-edge); }
 .stage .pattern i, .wrist .pattern i, .get .pattern i, .partner-demo .pattern i, .gt-vis .pattern i { color: rgba(255, 255, 255, .1); }
-.flow-bar span { background: rgba(255, 255, 255, .18); }
 
 /* Glass surfaces */
 .nav { background: rgba(22, 19, 15, .55); backdrop-filter: blur(22px) saturate(1.5); -webkit-backdrop-filter: blur(22px) saturate(1.5); }
@@ -1086,7 +1079,7 @@ body {
                        radial-gradient(90% 70% at 50% 36%, transparent 45%, rgba(22, 19, 15, .6) 100%); }
 
 /* Footer wordmark: centred */
-.foot-word { text-align: center; }
+.foot-word { text-align: center; font-size: clamp(64px, 21vw, 330px); }
 
 /* One width for every section */
 .note-card { max-width: none; }
@@ -1115,3 +1108,41 @@ body {
 
 /* Footer: just the crisis note, centred */
 .foot-base { justify-content: center; text-align: center; }
+
+/* Hero: in beta, one button to the waitlist */
+.beta-line { display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600; color: var(--text-2); }
+.beta-line i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(243, 104, 62, .22); }
+.hero-get:has(.beta-line) { flex-direction: column; gap: 14px; }
+.beta-line { font-size: 14px; font-weight: 500; }
+
+/* Waitlist form: errors on text areas, a busy button, a hidden trap for bots */
+.field textarea[aria-invalid="true"] { outline: 2px solid #FF7A5C; }
+.btn:disabled { opacity: .6; cursor: progress; }
+#wl-fail a { color: inherit; font-weight: 700; text-underline-offset: 3px; }
+#wl-fail:focus { outline: none; }
+.hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Header: links never break onto two lines; tighter pills where all five links just fit */
+.nav-links a { white-space: nowrap; }
+@media (min-width: 1180px) and (max-width: 1279px) { .nav-links a { padding: 9px 11px; } .aud a { padding: 8px 13px; } }
+
+/* Narrow phones: single columns may shrink, so wide cards can't push the page sideways */
+@media (max-width: 959px) { .wallet-grid, .contact { grid-template-columns: minmax(0, 1fr); } }
+.wallet-demo { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 380px) { .contact-ways li { grid-template-columns: 1fr; gap: 2px; } }
+@media (max-width: 359px) {
+  .nav-in { gap: 8px; }
+  .nav .btn-sm { padding: 0 12px; font-size: 13px; }
+  .burger { margin-left: 0; }
+  .wallet-demo { padding: 16px; }
+  .wallet-demo .stack .pass .pass-name, .wallet-demo .stack .pass .pass-val { font-size: 14px; }
+  .wallet-demo .pass-val { white-space: normal; }
+}
+
+/* Beta line: the dot stays with the first word when the line wraps on phones */
+.beta-line { display: block; text-align: center; text-wrap: balance; }
+.beta-line i { display: inline-block; margin: 0 9px 1px 0; vertical-align: middle; }
+
+/* Phones: comfortable tap targets for the logo and the waitlist link */
+.nav .brand { min-height: 44px; }
+@media (max-width: 599px) { .get-alt { min-height: 40px; } }

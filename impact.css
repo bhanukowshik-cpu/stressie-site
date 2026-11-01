@@ -1,0 +1,46 @@
+/* Impact page (Te Vemos). Only what site.css doesn't already cover. */
+
+.page-impact .sec { padding-top: clamp(72px, 9vw, 120px); }
+
+.page-impact .sheet a[aria-current="page"] { color: var(--accent); }
+
+/* Hero */
+.imp-hero .hero-ctas { justify-content: flex-start; margin-top: 28px; }
+
+/* Stories: two cards side by side */
+@media (min-width: 760px) { .ways.imp-stories { grid-template-columns: 1fr 1fr; } }
+.imp-stories .way { grid-template-rows: none; }
+.imp-mono { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-a, #F78521), var(--orange-b, #F05F1C)); color: #fff; font: 700 24px/1 var(--display); }
+.imp-pull { margin-top: 4px !important; padding-top: 14px; border-top: 1px solid var(--line); font: 600 18px/1.35 var(--display); letter-spacing: -.01em; color: var(--text) !important; }
+
+/* How it works: four compact steps */
+.imp-for { display: flex; flex-wrap: wrap; gap: 8px; }
+.imp-for .chip i { color: var(--accent); }
+.ways.imp-steps { margin: 0; padding: 0; list-style: none; }
+@media (min-width: 640px) { .ways.imp-steps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .ways.imp-steps { grid-template-columns: repeat(4, 1fr); } }
+.imp-steps .way { grid-template-rows: none; gap: 10px; padding: 24px; }
+.imp-steps .way h3 { font-size: 21px; }
+.imp-n { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* What each worker gets */
+.card-band.imp-gets { margin-top: 14px; }
+.imp-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.imp-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; color: var(--muted); }
+.imp-list i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--card-2); color: var(--accent); font-size: 20px; }
+.imp-list span { padding-top: 8px; }
+.imp-list b { font-weight: 600; color: var(--text); }
+
+/* Privacy and partner */
+.imp-partner > i { color: var(--accent); }
+
+/* CTA and the small print */
+.page-impact .get .biz-row { justify-content: center; }
+.imp-fine { max-width: 720px; margin: 20px auto 0; font-size: 13px; line-height: 1.6; color: var(--faint); text-align: center; text-wrap: pretty; }
+
+/* Phones: buttons stack full width and may wrap */
+@media (max-width: 480px) {
+  .imp-hero .hero-ctas .btn, .page-impact .get .btn { width: 100%; white-space: normal; text-align: center; }
+  .private { grid-template-columns: 1fr; padding: 22px; }
+  .private > i { grid-row: auto; }
+}
