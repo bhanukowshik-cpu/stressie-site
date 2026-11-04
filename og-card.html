@@ -1,0 +1,78 @@
+<!doctype html>
+<!-- Source for img/og.png, the 1200x630 share image. Not linked from the site.
+     To re-render: chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=8000 --screenshot=img/og.png og-card.html -->
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { background-attachment: scroll; }
+  .og-left { position: absolute; left: 68px; top: 60px; bottom: 58px; width: 560px; display: flex; flex-direction: column; }
+  .og-left .brand { font-size: 30px; gap: 12px; }
+  .og-left .brand .mark { width: 44px; height: 44px; }
+  .og-title { margin: auto 0 0; font: 800 54px/1.04 var(--display); letter-spacing: -.04em; text-wrap: balance; }
+  .og-list { display: grid; gap: 16px; margin: 30px 0 0; padding: 0; list-style: none; }
+  .og-list li { display: flex; align-items: center; gap: 14px; font: 500 23px/1.25 var(--sans); color: var(--text-2); letter-spacing: -.01em; }
+  .og-list i { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 13px; background: var(--glass-2); box-shadow: var(--glass-edge); color: var(--accent); font-size: 22px; }
+  .og-url { margin-top: auto; padding-top: 28px; font: 600 20px/1 var(--sans); color: var(--muted); }
+  .og-stage { position: absolute; right: 40px; top: 40px; width: 550px; height: 550px; --s: calc(550 / 520); }
+  .og-stage .stage { border-radius: 40px; }
+  .og-stage .app { transform: translate(-50%, -50%) scale(1.22); }
+  .og-stage .hand { opacity: 1; --x: 150px; --y: 268px; width: 70px; height: 70px; }
+  .og-title em { font-style: normal; background: linear-gradient(90deg, #FBB15E, #F78521 60%, #F26A2A); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="mclip"><rect width="100" height="100" rx="23"/></clipPath>
+  <symbol id="mark" viewBox="0 0 100 100"><rect width="100" height="100" rx="23" fill="#D3451D"/><g clip-path="url(#mclip)"><path transform="rotate(-15 50 50)" d="M130 36.2H40A7.2 7.2 0 0 0 40 50.6H60A7.2 7.2 0 0 1 60 65H-30" fill="none" stroke="#fff" stroke-width="13.5"/></g></symbol>
+  <symbol id="mark-s" viewBox="0 0 100 100"><g clip-path="url(#mclip)"><path transform="rotate(-15 50 50)" d="M130 36.2H40A7.2 7.2 0 0 0 40 50.6H60A7.2 7.2 0 0 1 60 65H-30" fill="none" stroke="currentColor" stroke-width="13.5"/></g></symbol>
+  <symbol id="i-hand" viewBox="0 0 64 64">
+    <path d="M13 38V9a5 5 0 0 1 10 0v18a4.5 4.5 0 0 1 9 0v2a4.5 4.5 0 0 1 9 0v3a4 4 0 0 1 8 0v13c0 9-7 15-16 15h-5c-6 0-10-3-13-8l-8-11c-1.5-2.4-.5-5.3 2-6.3 2.2-.8 3.6.2 5 2.3z" fill="#FFFDF9" stroke="#3A2E22" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M32 29v7M41 32v6M23 27v8" fill="none" stroke="#3A2E22" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+</defs></svg>
+
+<div class="og-left">
+  <span class="brand"><svg class="mark"><use href="#mark"/></svg>Stressie</span>
+  <h1 class="og-title">The wellness app for <em>shift teams.</em></h1>
+  <ul class="og-list">
+    <li><i class="ph ph-wind"></i>Two-minute resets for the break</li>
+    <li><i class="ph ph-moon"></i>Sleep help after any shift</li>
+    <li><i class="ph ph-map-pin"></i>Perks at places near work</li>
+    <li><i class="ph ph-users-three"></i>Anonymous team trends, never names</li>
+  </ul>
+  <p class="og-url">www.stressieapp.com</p>
+</div>
+
+<div class="og-stage">
+  <div class="stage is-on">
+    <div class="pattern" data-pattern></div>
+    <div class="art"><div class="app">
+      <div class="app-row"><p class="app-title">Home</p><div class="app-row"><span class="round work"><i class="ph ph-briefcase"></i></span><span class="round"><i class="ph ph-waveform"></i></span><span class="round av">SR</span></div></div>
+      <p class="app-sub">Take a moment</p>
+      <div class="moments">
+        <div class="mo"><i class="ph ph-wind"></i><b>Breathe</b><span>1 min</span></div>
+        <div class="mo"><i class="ph ph-person-simple-tai-chi"></i><b>Move freely</b><span>Stretch · 2 min</span></div>
+        <div class="mo"><i class="ph ph-pencil-simple"></i><b>Clear your mind</b><span>Write a thought</span></div>
+        <div class="mo"><svg class="mark"><use href="#mark-s"/></svg><b>Talk it through</b><span>Out loud</span></div>
+      </div>
+    </div></div>
+    <div class="hand"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></div>
+  </div>
+</div>
+
+<script>
+  // The brand-board icon pattern, as drawn by site.js
+  const ICONS = ['moon','coffee','sun','sneaker','bus','house','buildings','credit-card','coins','heart','pill','calendar-dots','clock','map-pin','headphones','ticket','tote','key','wrench','hard-hat','cube','truck','shopping-cart','fork-knife','stethoscope','star','bell','graduation-cap','chat','users','barbell','bed'];
+  const el = document.querySelector('[data-pattern]'), w = 550, h = 550, gap = 58;
+  el.style.setProperty('--ps', '22px');
+  let html = '', n = 0;
+  for (let r = 0; r < Math.ceil(h / gap) + 1; r++) for (let c = 0; c < Math.ceil(w / gap) + 1; c++) {
+    const x = c * gap + (r % 2 ? gap / 2 : 0) + gap * .25, y = r * gap + gap * .5;
+    html += `<i class="ph ph-${ICONS[(n * 7 + r * 5) % ICONS.length]}" style="left:${x}px;top:${y}px"></i>`; n++;
+  }
+  el.innerHTML = html;
+</script>
+</body></html>
