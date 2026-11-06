@@ -521,6 +521,16 @@ button { font: inherit; color: inherit; }
 .hang { margin-left: -.42em; }
 .voice figcaption, .story figcaption { display: flex; align-items: center; gap: 14px; margin-top: clamp(24px, 3vw, 36px); font-size: 14px; color: var(--muted); }
 .voice figcaption b, .story figcaption b { display: block; font-size: 16px; font-weight: 600; color: var(--text); }
+.voice[hidden], [data-only-ind][hidden] { display: none; }
+.pilot-head { margin-bottom: 20px; }
+.pilot-head .eyebrow { margin-bottom: 8px; }
+.pilot-head .lead { font-size: 16px; }
+/* No pilot card beside the quote: let the quote take the row, at a readable width */
+@media (min-width: 960px) { .words-lead.solo { grid-template-columns: minmax(0, 860px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .voices > .voice { animation: voice-in .5s ease both; }
+  @keyframes voice-in { from { opacity: 0; transform: translateY(8px); } }
+}
 .face { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: var(--card-2); }
 .pilot { display: grid; padding: 10px 10px 22px; border-radius: 30px; background: var(--bg-2); }
 .pilot-photo { position: relative; aspect-ratio: 16 / 10; border-radius: 22px; overflow: hidden; }

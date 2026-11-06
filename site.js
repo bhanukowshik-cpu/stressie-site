@@ -482,6 +482,8 @@
     const tabs = $$('[role="tab"]', bar), thumb = $('.ind-thumb', bar);
     const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
     const photos = $$('.ind-photos > *');
+    const voices = $$('.voices > .voice');
+    const onlyFor = $$('[data-only-ind]'), wordsLead = $('.words-lead');
     const place = (t, instant) => {
       if (instant) thumb.style.transition = 'none';
       thumb.style.width = `${t.offsetWidth}px`;
@@ -493,6 +495,11 @@
       tabs.forEach((t, k) => { const on = k === i; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); });
       panels.forEach((p, k) => p.classList.toggle('is-off', k !== i));
       photos.forEach((p, k) => p.classList.toggle('is-on', k === i));
+      // The quote under "In their words" follows the chosen industry
+      voices.forEach(v => { v.hidden = Number(v.dataset.ind) !== i; });
+      // Pilot results and their intro only show for the industry they come from
+      onlyFor.forEach(el => { el.hidden = Number(el.dataset.onlyInd) !== i; });
+      if (wordsLead) wordsLead.classList.toggle('solo', !wordsLead.querySelector('[data-only-ind]:not([hidden])'));
       place(tabs[i]);
     }
     tabs.forEach((t, i) => t.addEventListener('click', () => select(i)));

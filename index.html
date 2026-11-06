@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=202611010945">
+<link rel="stylesheet" href="site.css?v=202611061330">
 </head>
 <body class="page-home">
 
@@ -442,15 +442,35 @@
   <section class="sec" id="proof" aria-labelledby="proof-title">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow"><i class="ph ph-quotes" aria-hidden="true"></i>Built in the field</p>
         <h2 class="h2" id="proof-title">In their <em>words</em>.</h2>
-        <p class="lead">Shaped in a six-month pilot at Ember Kitchen in Austin, with managers and frontline staff.</p>
+        <p class="lead">What industry leaders say about Stressie.</p>
       </div>
       <div class="words-lead">
-        <figure class="voice reveal">
-          <blockquote><p><span class="hang">“</span>It’s no longer just about how the staff feels, it’s about building a sustainable, high-output culture that can handle the rush <em>without the burnout.</em>”</p></blockquote>
-          <figcaption><img class="face" src="img/face-jon.webp" alt="" width="56" height="56" loading="lazy"><span><b>Jon De Wolff</b>Co-founder, inKind</span></figcaption>
-        </figure>
+        <div class="voices">
+          <!-- One quote per industry tab above (data-ind matches the tab order) -->
+          <figure class="voice" data-ind="0">
+            <blockquote><p><span class="hang">“</span>It’s no longer just about how the staff feels, it’s about building a sustainable, high-output culture that can handle the rush <em>without the burnout.</em>”</p></blockquote>
+            <figcaption><img class="face" src="img/face-jon.webp" alt="" width="56" height="56" loading="lazy"><span><b>Jon De Wolff</b>Co-founder, inKind</span></figcaption>
+          </figure>
+          <figure class="voice" data-ind="1" hidden>
+            <blockquote><p><span class="hang">“</span>In an environment as demanding as EVS, it’s helped our managers better support their staff, and the staff learn tools to help them in their day to day that’s translating into <em>more consistent performance on the ground.</em>”</p></blockquote>
+            <figcaption><img class="face" src="img/face-mike.webp" alt="" width="56" height="56" loading="lazy"><span><b>Mike Gorman</b>Regional Director, Crothall Healthcare</span></figcaption>
+          </figure>
+          <figure class="voice" data-ind="2" hidden>
+            <blockquote><p><span class="hang">“</span>Stressie equipped our team with on-the-go tools to stay healthy, reframe stress, and <em>prevent burnout.</em>”</p></blockquote>
+            <figcaption><img class="face" src="img/face-lorena.webp" alt="" width="56" height="56" loading="lazy"><span><b>Lorena Alvarez</b>Logistics Operations, Fluence</span></figcaption>
+          </figure>
+          <figure class="voice" data-ind="3" hidden>
+            <blockquote><p><span class="hang">“</span>Early conversations and beta programs are already showing real benefit for <em>warehouse output and wellbeing.</em>”</p></blockquote>
+            <figcaption><img class="face" src="img/face-vinayak.webp" alt="" width="56" height="56" loading="lazy"><span><b>Vinayak Gaikwad</b>Stressie Advisor, formerly SpaceX and Amazon</span></figcaption>
+          </figure>
+        </div>
+        <!-- data-only-ind="0": shown only while the Hospitality tab is picked (the Ember pilot is a hospitality pilot) -->
+        <div class="pilot-wrap" data-only-ind="0">
+        <div class="pilot-head">
+          <p class="eyebrow"><i class="ph ph-quotes" aria-hidden="true"></i>Built in the field</p>
+          <p class="lead">Shaped in a six-month pilot at Ember Kitchen in Austin, with managers and frontline staff.</p>
+        </div>
         <article class="pilot reveal" aria-label="Ember Kitchen pilot results">
           <div class="pilot-photo"><img src="img/ember-pilot.webp" alt="The Ember Kitchen sign inside the restaurant" loading="lazy"><span class="glass-tag">Ember Kitchen · Austin, TX</span></div>
           <dl class="pilot-stats">
@@ -459,12 +479,8 @@
             <div><dt>More happy customers</dt><dd>17%</dd></div>
           </dl>
         </article>
+        </div>
       </div>
-      <figure class="story reveal">
-        <div class="story-photo"><img src="img/face-lorena.webp" alt="" loading="lazy"><span class="glass-tag">Fluence Energy</span></div>
-        <blockquote><p>“Stressie equipped our team with on-the-go tools to stay healthy, reframe stress, and <em>prevent burnout.</em>”</p></blockquote>
-        <figcaption><b>Lorena Alvarez</b>Logistics Operations, Fluence</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -546,6 +562,6 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js" defer></script>
-<script src="site.js?v=202611011210" defer></script>
+<script src="site.js?v=202611061330" defer></script>
 </body>
 </html>
